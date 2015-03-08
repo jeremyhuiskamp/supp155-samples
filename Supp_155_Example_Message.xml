@@ -2,1285 +2,1097 @@
 <!-- ?xml-stylesheet type="text/xsl" href="CDA.xsl"? -->
 <!-- DICOM Supplement 155 Example Clinical Document. -->
 <ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
-	<!-- 
-********************************************************
-  CDA Header
-********************************************************
--->
-	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
-	<!-- templateID for the Synoptic Template used, i.e. clinical sub-specialty requirements. Fictional OID assigned under the CCO branch.-->
-	<templateId root="2.16.840.1.113883.3.239.23.12.x" extension="2012-09-04"/>
-	<!-- templateID for the document-->
-	<templateId root="1.2.840.10008.20.x1.x1"/>
-	<id root="2.16.840.1.113883.19" extension="1234567890"/>
-	<code code="18748-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnostic Imaging Report"/>
-	<title>MRI Report for Rectal Cancer</title>
-	<effectiveTime value="20140730120000-0400"/>
-	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.1.11.16926"/>
-	<languageCode code="en-CA"/>
-	<setId root="2.16.840.1.113883.19" extension="54321"/>
-	<versionNumber value="1"/>
-	<recordTarget>
-		<patientRole>
-			<id root="2.16.840.1.113883.19" extension="12345"/><!-- Fake ID using HL7 example OID -->
-			<addr use="HP">
-				<streetAddressLine>123 Main St.</streetAddressLine>
-				<city>Ottawa</city>
-				<state>ON</state>
-				<postalCode>K1A 0K9</postalCode>
-				<country>CA</country>
-			</addr>
-			<telecom value="tel:(613)867-5309" use="HP"/>
-			<patient>
-				<name use="L">
-					<given>Bobo</given>
-					<family>Clown</family>
-					<suffix>the 1st</suffix>
-				</name>
-				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" displayName="Male"/>
-				<birthTime value="19601231"/>
-			</patient>
-			<!-- providerOrganization is the healthcare organization that assigned the id sub-element of patientRole. 0..1 MAY.
-				<providerOrganization>
-				</providerOrganization>
-			-->
-		</patientRole>
-	</recordTarget>
-	<!-- We will assume this document has NOT been legally authenticated.
-	<legalAuthenticator>
-	</legalAuthenticator>
-	-->
-	<author>
-		<time value="20140730120000-0400"/>
-		<assignedAuthor>
-			<id root="2.16.840.1.113883.4.347" extension="12345"/>
-			<!-- Fictitious  CPSO# and OID for CPSO (Ontario College of Physicians and Surgeons) -->
-			<id root="2.16.840.1.113883.19.5" extension="TOH1234"/>
-			<!-- Ottawa Hospital Physician ID -->
-			<addr>
-				<streetAddressLine>333 Laurier Avenue West</streetAddressLine>
-				<city>Ottawa</city>
-				<state>ON</state>
-				<postalCode>K1A 0L9</postalCode>
-				<country>CA</country>
-			</addr>
-			<telecom use="WP" value="tel:(613)555-1234"/>
-			<assignedPerson>
-				<name>
-					<given>Slim</given>
-					<family>Pickens</family>
-					<suffix>MD</suffix>
-				</name>
-			</assignedPerson>
-		</assignedAuthor>
-	</author>
-	<custodian>
-		<assignedCustodian>
-			<representedCustodianOrganization>
-				<id root="2.16.840.1.113883.19.5"/>
-				<name>The Ottawa Hospital</name>
-				<telecom value="tel:(613)798-5555" use="WP"/>
-				<addr use="WP">
-					<streetAddressLine>501 Smyth Rd.</streetAddressLine>
-					<city>Ottawa</city>
-					<state>ON</state>
-					<postalCode>K1H 8L6</postalCode>
-					<country>CA</country>
-				</addr>
-			</representedCustodianOrganization>
-		</assignedCustodian>
-	</custodian>
-	<!-- we will assume this is the first instance of this report.
-		<relatedDocument typeCode="RPLC">
-		</relatedDocument>	
-	-->
-	<!-- 
-********************************************************
-  Imaging Header Elements
-********************************************************
--->	<componentOf>
-		<encompassingEncounter>
-			<id root="1.3.6.4.1.4.1.2835.12" extension="1234567890"/>
-			<effectiveTime value="20140730120000-0400"/>
-		</encompassingEncounter>
-	</componentOf>
-	<inFulfillmentOf>
-		<order>
-			<!--  {root}.33= placer number assigner (CPOE) -->
-			<id root="2.16.840.1.113883.19.4.33" extension="089-927851"/>
-			<!--  {root}.27= accession number assigner (RIS) -->
-			<id root="2.16.840.1.113883.19.4.27" extension="10523475"/>
-		</order>
-	</inFulfillmentOf>
-	<documentationOf>
-		<serviceEvent classCode="ACT">
-		<!-- study instance UID -->
-		<id root="1.2.840.113619.2.62.994044785528.114289542805"/>
-		<!-- DICOM Requested Procedure ID -->
-		<id root="1.2.840.113619.2.62.994044785528.26" extension="654321"/>
-			<code code="RPID629" 
-				displayName="MR PELVIS RECTUM" 
-				codeSystem="2.16.840.1.113883.6.256" 
-				codeSystemName="RadLex"/>
-			<!-- translation code is Modality (0008,0060) -->
-			<translation code="MR" 
-				displayName="Magnetic Resonance"
-				codeSystem="1.2.840.10008.2.16.4" 
-				codeSystemName="DCM"/>
-			<effectiveTime value="20140730120000-0400"/>
-			<!-- In simple procedures, the physician reading the study is identified in the Author or LegalAuthenticator participation on the ClinicalDocument, and does not need to be re-identified in this element. 
-			<performer> typeCode="PRF">
-			</performer>
-			-->
-		</serviceEvent>
-	</documentationOf>
-	<!-- participant is 1..1 SHALL - in this case a referring physician -->
-	<participant typeCode="REF">
-		<assignedEntity classCode="PROV">
-			<id nullFlavor="NI"/>
-			<addr nullFlavor="NI"/>
-			<telecom nullFlavor="NI"/>
-			<assignedPerson>
-				<name>
-					<given>Ty</given>
-					<family>Cobb</family>
-					<suffix>MD</suffix>
-				</name>
-			</assignedPerson>
-		</assignedEntity>
-	</participant>
-	<!-- DataEnterer is 0..1 MAY - e.g., person who transcribes from paper form to electronic system -->
-	<dataEnterer>
-		<assignedEntity>
-			<id root="2.16.840.1.113883.19.5" extension="99999"/>
-			<addr>
-				<streetAddressLine>501 Smyth Rd.</streetAddressLine>
-				<city>Ottawa</city>
-				<state>ON</state>
-				<postalCode>K1H 8L6</postalCode>
-				<country>CA</country>
-			</addr>
-			<telecom use="WP" value="tel:(613)555-1000"/>
-			<assignedPerson>
-				<name>
-					<given>Data</given>
-					<family>Enterer</family>
-				</name>
-			</assignedPerson>
-		</assignedEntity>
-	</dataEnterer>
-	<!-- 
-********************************************************
-  CDA Body
-********************************************************
--->
-	<component>
-		<structuredBody>
-			<!-- 
-********************************************************
-  Clinical Information Section
-********************************************************
--->
-			<component>
-				<section classCode="DOCSECT" moodCode="EVN">
-					<templateId root="1.2.840.10008.20.x2.x1" />
-					<id root="1.2.840.10213.2.62.994044785528.114289542805"/>
-					<code code="55752-0"
-						codeSystem="2.16.840.1.113883.6.1"
-						codeSystemName="LOINC"
-						displayName="Clinical Information"/>
-					<title>Clinical Information</title>
-					<text>The patient was referred for evaluation of...</text>
-					<!--
-********************************************************
-  Request Sub Section
-********************************************************
--->
-						<component>
-							<section classCode="DOCSECT" moodCode="EVN">
-								<templateId root="1.2.840.10008.20.x2.x6" />
-								<id root="1.2.840.10213.2.62.7906994785528.114289506"/>
-								<code code="55115-0"
-									codeSystem="2.16.840.1.113883.6.1"
-									codeSystemName="LOINC"
-									displayName="Request"/>
-								<title>Request</title>
-								<text>PTA (Iliac Angioplasty) for treatment of symptomatic artherosclerotic disease in both iliac arteries.
-									<content ID="CDS001">Procedure ordered by Pat Smith, MD, NPI:8740944987. Classified APPROPRIATE by RadCDS based on ACR Select criteria at 2015-07-21 10:52:31 CDT</content>
-								</text>
-								<entry>
-									<observation classCode="OBS" moodCode="EVN" ID="CDS001-E">
-									<id root="1.2.840.90012.1097.9961.100" extension="20150721-16554"/>
-									<code code="99SUP155-9"
-										codeSystem="2.16.840.1.113883.6.1"
-										codeSystemName="LOINC"
-										displayName="Procedure Appropriate to Indication"/>
-									<value xsi:type="CD" code="LA33-6"
-										codeSystem="2.16.840.1.113883.6.1"
-										codeSystemName="LOINC"
-										displayName="Yes"/>
-									<effectiveTime value="20150721105231-0400"/>
-									<statusCode code="completed"/>
-									<methodCode code="CDS-003"
-										codeSystem="2.16.840.1.113883.19.166"
-										codeSystemName="US DHHS CDS"
-										displayName="ACR Select"/>
-									<text>
-										<reference value="#CDS001"/>
-									</text>
-									<author>
-										<assignedAuthor>
-											<id root="2.16.840.1.113883.19.169" extension="900104"/>
-											<assignedAuthoringDevice>
-												<softwareName>RadCDS</softwareName>
-											</assignedAuthoringDevice>
-										</assignedAuthor>
-									</author>
-									<participant typeCode="REF">
-										<participantRole>
-											<id root="2.16.840.1.113883.4.6" extension="8740944987"/>
-											<playingEntity classCode="PSN">
-												<name>Pat Smith, MD</name>
-											</playingEntity>
-										</participantRole>
-									</participant>
-									</observation>
-								</entry>
-							</section>
-						</component>
-						<!--
-********************************************************
-  Procedure Indications Sub Section
-********************************************************
--->
-						<component>
-							<section classCode="DOCSECT" moodCode="EVN">
-							   <templateId root="1.2.840.10008.20.x2.x12"/>
-								<id root="1.2.840.10213.2.62.044785528.1142895426"/>
-								<code code="59768-2"
-									codeSystem="2.16.840.1.113883.6.1"
-									codeSystemName="LOINC" 
-									displayName="Procedure Indications"/>
-							<title>Procedure Indications</title>
-							<text>The procedure is performed as a follow-up for an abnormal screening result.</text>
-							</section>
-						</component>
-				</section>
-			</component>
-			<!-- 
-********************************************************
-  Imaging Procedure Description Section
-********************************************************
--->
-			<component>
-				<section classCode="DOCSECT" moodCode="EVN">
-					<templateId root="1.2.840.10008.20.x2.x2"/>
-					<!-- Fictitious DCE UUID string, used in sections, labelled sub-sections and entries. -->
-					<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-					<code code="55111-9"
-						codeSystem="2.16.840.1.113883.6.1"
-						codeSystemName="LOINC"
-						displayName="Current imaging procedure descriptions"/>
-					<title>Imaging Procedure Description</title>
-					<text>
-						<list>
-							<item>
-								<content ID="01a">A MR study of the rectum was performed with Axial large FOV TSE T2, high resolution 3D T2 SPACE, and...</content>
-							</item>
-							<item>
-								<content ID="01b">Overall Image Quality: Adequate</content>
-							</item>
-						</list>
-					</text>
-					
-						<!-- 
-***********************************************************
-  Procedure Technique Entry
-***********************************************************
--->
-					
-						<entry>
-							<procedure moodCode="EVN" classCode="PROC">
-								<templateId root="1.2.840.10008.20.x3.x2"/>
-								<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-								<procedureCode code="RPID629"
-									displayName="MR Pelvis Rectum"
-									codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex"/>
-								<effectiveTime value="20140730120000-0400"/>
-								<methodCode code="MR"
-									displayName="Magnetic Resonance"
-									codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
-								<reference value="#01a"/>
-							</procedure>
-						</entry>
-						<!-- 
-***********************************************************
-  Radiation Exposure and Protection Information Sub Section
-***********************************************************
--->
-						<component>
-							<section classCode="DOCSECT" moodCode="EVN">
-									<templateId root="1.2.840.10008.20.x2.x7"/>
-									<id root="1.2.840.10213.2.62.704478559484.11428372623"/>
-									<code code="73569-6"
-										codeSystem="2.16.840.1.113883.6.1" 
-										codeSystemName="LOINC" 
-										displayName="Radiation Exposure And Protection Information"/>
-									<title> Radiation Exposure and Protection Information</title>
-									<text>A dosage of...</text>
-									<entry>
-										<procedure classCode="PROC" moodCode="EVN">
-											<code code="99SUP155-1"
-												codeSystem="2.16.840.1.113883.6.1"
-												codeSystemName="DCM" 
-												displayName="Patient exposure to ionizing radiation"/>
-											<participant typeCode="RESP">
-												<participantRole>
-														<id root="2.16.840.1.113883.4.6" extension="980003719"/>
-														<functionCode code="113850" 
-															codeSystem="2.16.840.1.113883.6.1"
-															codeSystemName="DCM" 
-															displayName="Irradiation Authorizing"/>
-														<playingEntity>
-															<name>
-																<given>Martha</given>
-																<family>Radiologist</family>
-															</name>
-														</playingEntity>
-												</participantRole>
-											</participant>
-										</procedure>
-									</entry>
-									<entry>
-										<observation classCode="OBS" moodCode="EVN" ID="pregnancy">
-											<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-											<id root="1.2.840.10213.2.62.7044779.114265201"/>
-											<code code="364320009"
-												codeSystem="2.16.840.1.113883.6.96"
-												codeSystemName="SNOMED CT"
-												displayName="Pregnancy observable"/>
-											<statusCode code="completed"/>
-											<value xsi:type="CD" code="60001007"
-												codeSystem="2.16.840.1.113883.6.96"
-												codeSystemName="SNOMED CT" 
-												displayName="not pregnant"/>
-											<effectiveTime value="20140914171504-0400"/>
-									</observation>
-									</entry>
-							</section>
-						</component>
-						<!-- 
-***********************************************************
-  DICOM Object Catalog Sub Section
-***********************************************************
--->
-						<component>
-							<section classCode="DOCSECT" moodCode="EVN">
-								<templateId root="2.16.840.1.113883.10.20.6.1.1"/>
-								<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-								<code code="121181"
-									codeSystem="1.2.840.10008.2.16.4"
-									codeSystemName="DCM"
-									displayName="DICOM Object Catalog"/>
-							</section>
-						</component>
-						<!-- 
-********************************************************
-  Image Quality Entry
-********************************************************
--->
-						<entry>
-							<observation classCode="OBS" moodCode="EVN" ID="Q1">
-								<templateId root="1.2.840.10008.20.x3.x4"/>
-								<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-								<code code="111050" codeSystem="1.2.840.10008.2.16.4" 
-									codeSystemName="DCM" 
-									displayName="Image Quality Assessment"/>
-								<statusCode code="completed"/>
-								<effectiveTime value="20140730120000-0400"/>
-								<value xsi:type="CD" code="RID12" 
-									codeSystem="2.16.840.1.113883.6.256" 
-									codeSystemName="RadLex" 
-									displayName="Diagnostic quality"/>
-								<text>
-									<reference value="#01b"/>
-								</text>
-							</observation>
-						</entry>
-				</section>
-			</component>
-			<!-- 
-********************************************************
-  Comparison Study Section
-********************************************************
--->
-			<component>
-				<section classCode="DOCSECT" moodCode="EVN">
-					<templateId root="1.2.840.10008.20.x2.x3"/>
-					<id root="1.2.840.10213.2.62.994056444785528.1142893564536542805"/>
-					<code code="18834-2"
-						codeSystem="2.16.840.1.113883.6.1"
-						codeSystemName="LOINC"
-						displayName="Radiology Comparison Study"/>
-					<title>Comparison Study</title>
-					<text>A prior MRI performed on ***DATE*** showed that...</text>
-				</section>
-			</component>
-			<!--
-********************************************************
-  Findings Section
-********************************************************
--->
-			<component>
-				<section>
-					<templateId root="2.16.840.1.113883.10.20.6.1.2"/>
-					<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-					<code code="59776-5"
-						codeSystem="2.16.840.1.113883.6.1"
-						codeSystemName="LOINC"
-						displayName="Procedure Findings"/>
-					<title>Findings</title>
-					<!-- 
-********************************************************
-  Tumour Location Subsection (i.e. Labelled Subsection)
-********************************************************
--->
-					<component>
-					<section ID="Tumour Location">
-						<templateId root="1.2.840.10008.20.x2.x9"/>
-						<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-							<title>Tumour Location</title>
-							<text>
-							<list>
-								<item>
-									<content ID="02">Tumour Location (from anal verge): Low (0-5.0 cm)</content>
-								</item>
-								<item>
-									<content ID="03">Distance of the Lowest Extent of Tumour from Anal Verge: 3 cm</content>
-								</item>
-								<item>
-									<content ID="04">Distance of the Lowest Extent of Tumour from Top of Anal Sphincter: -1 cm</content>
-								</item>
-								<item>
-									<content ID="05">Relationship to Anterior Peritoneal Reflection: Below</content>
-								</item>
-							</list>
-							</text>
-<!-- 
-********************************************************
-  Coded Observation - single select
-********************************************************
--->
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q2">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q2" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Tumour Location from Anal Verge"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q2a" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Low (0-5.0 cm)"/>
-									<text>
-										<reference value="#02"/>
-									</text>
-								</observation>
-							</entry>
-<!-- 
-********************************************************
- Quantity Measurement
-********************************************************
--->
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q3">
-									<templateId root="2.16.840.1.113883.10.20.6.2.14"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q3" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Distance of Lowest Extent of Tumour from Anal Verge"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="PQ" unit="cm">3</value>
-									<text>
-										<reference value="#03"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q4">
-									<templateId root="2.16.840.1.113883.10.20.6.2.14"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q4" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Distance of Lowest Extent of Tumor from Top of Anal Sphincter"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="PQ" unit="cm">-1</value>
-									<text>
-										<reference value="#04"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q5">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q5" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Relationship to Anterior Peritoneal Reflection"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q5c" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Below"/>
-									<text>
-										<reference value="#05"/>
-									</text>
-								</observation>
-							</entry>
-					</section>
-					</component>
-					<component>
-					<section ID="Tumour Characteristics">
-						<templateId root="1.2.840.10008.20.x2.x9"/>
-						<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-							<title>Tumour Characteristics</title>
-							<text>
-							<list>
-								<item>
-									<content ID="06a">Circumferential Extent/Location from: 9 o'clock</content>
-								</item>
-								<item>
-									<content ID="06b">Circumferential Extent/Location to: 3 o'clock</content>
-								</item>
-								<item>
-									<content ID="07">Craniocaudad Extent: 5 cm</content>
-								</item>
-								<item>
-									<content ID="08">The tumour is not mucinous.</content>
-								</item>
-							</list>
-							</text>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q6a">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q6a" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Circumferential Extent/Location from"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="260343005" 
-										codeSystem="2.16.840.1.113883.6.96" 
-										codeSystemName="SNOMED CT" 
-										displayName="9 o'clock position"/>
-									<text>
-										<reference value="#06a"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q6b">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q6a" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Circumferential Extent/Location to"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="260330005" 
-										codeSystem="2.16.840.1.113883.6.96" 
-										codeSystemName="SNOMED CT" 
-										displayName="3 o'clock position"/>
-									<text>
-										<reference value="#06b"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q7">
-									<templateId root="2.16.840.1.113883.10.20.6.2.14"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q7" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Craniocaudad Extent"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="PQ" unit="cm">5</value>
-									<text>
-										<reference value="#07"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q8">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q8" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Mucinous"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q8a" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="No"/>
-									<text>
-										<reference value="#08"/>
-									</text>
-								</observation>
-							</entry>
-					</section>
-					</component>
-					<component>
-					<section ID="T-Category">>
-						<templateId root="1.2.840.10008.20.x2.x9"/>
-						<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-							<title>T-Category</title>
-							<text>
-							<list>
-								<item>
-									<content ID="09" styleCode="Bold">T-Category: T4 [HIGH – ACR Cat3]</content>
-								</item>
-								<item>
-									<content ID="10a">Structures with Possible Invasion: Prostate</content>
-								</item>
-								<item>
-									<content ID="10b">Structures with Possible Invasion: Pubococcygeus</content>
-								</item>
-								<item>
-									<content ID="11">The lower extent of the tumour is at or below the top border of the puborectalis</content>
-								</item>
-								<item>
-									<content ID="12">The most penetrating component of the tumour below the top border of the puborectalis is through the external sphincter.  There is definite involvement of adjacent organs. (T4)</content>
-								</item>
-							</list>
-							</text>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q9">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q9" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="T-category"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q9e" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="T4"/>
-									<text>
-										<reference value="#09"/>
-									</text>
-									<!--Actionable Finding-->
-									<interpretationCode code = "HH" codeSystem="2.16.840.1.113883.5.83"
-										codeSystemName="ObservationInterpretation"
-										displayName="High Alert">
-										<translation code="RID49482" codeSystem="2.16.840.1.113883.6.256"
-											codeSystemName="RADLEX"
-											displayName="ACR Category 3 Actionable Finding"/>
-									</interpretationCode>
-								</observation>
-							</entry>
-<!-- 
-********************************************************
-  Coded Observation - multi-select
-********************************************************
--->
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q10">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q10" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Structures with Possible Invasion"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="41216001" 
-										codeSystem="2.16.840.1.113883.6.96" 
-										codeSystemName="SNOMED CT" 
-										displayName="prostatic structure"/>
-									<text>
-										<reference value="#10a"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q10">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q10" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Structures with Possible Invasion"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="22355009" 
-										codeSystem="2.16.840.1.113883.6.96" 
-										codeSystemName="SNOMED CT" 
-										displayName="structure of pubococcygeus muscle"/>
-									<text>
-										<reference value="#10b"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q11">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q11" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Lower extent of tumour at or below top border of puborectalis"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q11b" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Yes"/>
-									<text>
-										<reference value="#09"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q12">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q12" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Most penetrating component of tumour below top border of puborectalis is"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q12f" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Through external sphincter and definite involvement of adjacent organs (i.e., prostate, vagina) (T4)"/>
-									<text>
-										<reference value="#12"/>
-									</text>
-								</observation>
-							</entry>
-					</section>
-					</component>
-					<component>
-					<section ID="Distance to the Mesorectal Fascia (MRF) and Extramural Depth of Invasion (EMD)">
-						<templateId root="1.2.840.10008.20.x2.x9"/>
-						<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-							<title>Distance to the Mesorectal Fascia (MRF) and Extramural Depth of Invasion (EMD)</title>
-							<text>
-							<list>
-								<item>
-									<content ID="13a">Minimum Distance of Primary Tumour to the Mesorectal Fascia: 0 mm</content>
-								</item>
-								<!-- Comment out the content NOT relevant this report instance
-								<item>
-									<content ID="13b">Minimum Distance of Primary Tumour to the Mesorectal Fascia: N/A</content>
-								</item>
-								-->
-								<item>
-									<content ID="15">Extramural Depth of Invasion (EMD) at this level: 10 mm</content>
-								</item>
-								<item>
-									<content ID="16">There are no tumour spiculations closer to the MRF.</content>
-								</item>
-								<!--
-								<item>
-									<content ID="17">Distance: N/A</content>
-								</item>
-								<item>
-									<content ID="18">Location: N/A</content>
-								</item>
-								-->
-								<item>
-									<content ID="19">There are no other components of the tumour (any T2-3) closer to the MRF.</content>
-								</item>
-								<!--
-								<item>
-									<content ID="20">Distance: N/A</content>
-								</item>
-								<item>
-									<content ID="21">Location: N/A</content>
-								</item>
-								-->
-							</list>
-							</text>
-							<!-- 
-********************************************************
-  When answer is a PQ
-********************************************************
--->
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q13a">
-									<templateId root="2.16.840.1.113883.10.20.6.2.14"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q13a" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Minimum Distance of Primary Tumour to Mesorectal Fascia"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="PQ" unit="mm">0</value>
-									<text>
-										<reference value="#13a"/>
-									</text>
-								</observation>
-							</entry>
-							<!-- 
-********************************************************
-  When answer is coded (not used in this report instance but included to demonstrate how nullFlavor code is utilized)
-********************************************************
--->
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q13b">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q13b" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Minimum Distance of Primary Tumour to Mesorectal Fascia"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" nullFlavor="NA"/>
-									<text>
-										<reference value="#13b"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q15">
-									<templateId root="2.16.840.1.113883.10.20.6.2.14"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q15" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Extramural Depth of Invasion (EMD) at this level"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="PQ" unit="mm">10</value>
-									<text>
-										<reference value="#15"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q16">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q16" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Tumour Spiculations Closer to the MRF"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q16a" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="No"/>
-									<text>
-										<reference value="#16"/>
-									</text>
-								</observation>
-							</entry>
-							<!-- Content that is dependent on the parent answer is included below but commented out. Inclusion will depend on the specific clinical content implementation guide. 
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q17">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q17" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Distance"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="PQ" nullFlavor="NA"/>
-									<text>
-										<reference value="#17"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q18">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q18" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Location"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" nullFlavor="NA"/>
-									<text>
-										<reference value="#18"/>
-									</text>
-								</observation>
-							</entry>
-							-->
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q19">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q16" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Other Component of Tumour (any T2-3) closer to the MRF"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q19b"
-										codeSystem="2.16.840.1.113883.3.239.23.12.x"
-										codeSystemName="CCO MRI Rectal Tumour Checklist"
-										displayName="No"/>
-									<text>
-										<reference value="#19"/>
-									</text>
-								</observation>
-							</entry>
-							<!--
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q20">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q20" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Distance"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="PQ" nullFlavor="NA"/>
-									<text>
-										<reference value="#20"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q21">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q21" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Location"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" nullFlavor="NA"/>
-									<text>
-										<reference value="#21"/>
-									</text>
-								</observation>
-							</entry>
-							-->
-					</section>
-					</component>
-					<component>
-					<section ID="Extramural Vascular Invasion (EMVI)">
-						<templateId root="1.2.840.10008.20.x2.x9"/>
-						<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-							<title>Extramural Vascular Invasion (EMVI)</title>
-							<text>
-							<list>
-								<item>
-									<content ID="22">EMVI is present.</content>
-								</item>
-							</list>
-							</text>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q22">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q22" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="EMVI"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q22c" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Present"/>
-									<text>
-										<reference value="#22"/>
-									</text>
-								</observation>
-							</entry>
-					</section>
-					</component>
-					<component>
-					<section ID="Mesorectal Lymph Nodes and Tumour Deposits">
-						<templateId root="1.2.840.10008.20.x2.x9"/>
-						<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-							<title>Mesorectal Lymph Nodes and Tumour Deposits</title>
-							<text>
-							<list>
-								<item>
-									<content ID="23">There are suspicious mesorectal lymph nodes and/or tumour deposits.</content>
-								</item>
-								<item>
-									<content ID="24">Shortest distance of any suspicious mesorectal lymph node/tumour deposit: 7 mm</content>
-								</item>
-								<item>
-									<content ID="25">Location of lymph node / deposit closest to MRF: Above tumour</content>
-								</item>
-								<item>
-									<content ID="26">Clock location of lymph node / deposit closest to MRF: 10 o'clock</content>
-								</item>
-							</list>
-							</text>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q23">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q23" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Suspicious mesorectal lymph nodes and/or tumour deposits"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q23b" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Yes"/>
-									<text>
-										<reference value="#23"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q24">
-									<templateId root="2.16.840.1.113883.10.20.6.2.14"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q24" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Shortest distance of any suspicious mesorectal lymph node/tumour deposit"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="PQ" unit="mm">7</value>
-									<text>
-										<reference value="#24"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q25">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q25" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Location of lymph node / deposit closest to MRF"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q25b" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Above tumour"/>
-									<text>
-										<reference value="#25"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q26">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q26" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Clock location of lymph node / deposit closest to MRF"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="260322009" 
-										codeSystem="2.16.840.1.113883.6.96" 
-										codeSystemName="SNOMED CT" 
-										displayName="10 o'clock position"/>
-									<text>
-										<reference value="#26"/>
-									</text>
-								</observation>
-							</entry>
-					</section>
-					</component>
-					<component>
-					<section ID="Extramesorectal Lymph Nodes">
-						<templateId root="1.2.840.10008.20.x2.x9"/>
-						<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-							<title>Extramesorectal Lymph Nodes</title>
-							<text>
-							<list>
-								<item>
-									<content ID="28">There are extramesorectal lymph node(s) with suspicious morphology.</content>
-								</item>
-								<item>
-									<content ID="29">Location(s) of extramesorectal lymph nodes with suspicious morphology or signal: right internal iliac; right common iliac</content>
-								</item>
-							</list>
-							</text>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q28">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q28" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Extramesorectal lymph node(s) with suspicious morphology"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" code="Q28b" 
-										codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Yes"/>
-									<text>
-										<reference value="#28"/>
-									</text>
-								</observation>
-							</entry>
-							<entry>
-								<observation classCode="OBS" moodCode="EVN" ID="Q29">
-									<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-									<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-									<code code="Q29" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-										codeSystemName="CCO MRI Rectal Tumour Checklist" 
-										displayName="Location(s) of extramesorectal lymph nodes with suspicious morphology or signal"/>
-									<statusCode code="completed"/>
-									<effectiveTime value="20140730120000-0400"/>
-									<value xsi:type="CD" nullFlavor="NA"/>
-									<text>
-										<reference value="#29"/>
-									</text>
-								</observation>
-							</entry>
-					</section>
-					</component>
-				</section>
-			</component>
-			<!--
-********************************************************
-  Impressions Section
-********************************************************
--->
-			<component>
-				<section>
-					<templateId root="1.2.840.10008.20.x2.x4"/>
-					<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-					<code code="19005-8"
-						codeSystem="2.16.840.1.113883.6.1"
-						codeSystemName="LOINC"
-						displayName = "Impressions"/>
-					<title>Impression</title>
-					<text>
-						<content ID="30">Additional Comments: Obstructing tumour</content>
-					</text>
-						<entry>
-							<observation classCode="OBS" moodCode="EVN" ID="Q30">
-								<templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-								<id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-								<code code="Q30" codeSystem="2.16.840.1.113883.3.239.23.12.x" 
-									codeSystemName="CCO MRI Rectal Tumour Checklist" 
-									displayName="Additional Comments"/>
-								<statusCode code="completed"/>
-								<effectiveTime value="20140730120000-0400"/>
-								<value xsi:type="CD" nullFlavor="NA"/>
-								<text>
-									<reference value="#30"/>
-								</text>
-							</observation>
-						</entry>
-						<!--
-********************************************************
-  Communication of Actionable Findings Sub Section
-********************************************************
--->
-					<component>
-						<section classCode="DOCSECT" moodCode="EVN">
-							<templateId root="1.2.840.10008.20.x2.x10"/>
-							<id root="1.2.840.10213.2.62.7044794679.114296787"/>
-								<code code="73568-8" 
-									codeSystem="2.16.840.1.113883.6.1"
-									codeSystemName="LOINC"
-									displayName="Communication of Critical Results"/>
-								<title>Communication of Actionable Results</title>
-								<text>
-									<content ID="CR1">Dr. Smith was phoned at 262-966-0120 at 3:14pm on Wednesday, June 4, 2014, and the T4 classification was discussed directly with Dr. Smith to explain the follow-up recommendation of...</content>
-									<!--T4 staging classification from <reference value="#09"/> above in Findings -->
-								</text>
-								<entry>
-								<act classCode="ACT" moodCode="EVN">
-									<code code="99SUP155-5" 
-										codeSystem="1.2.840.10008.2.16.4"
-										codeSystemName="DCM" 
-										displayName="Results Communicated"/>
-									<effectiveTime value="20140604221400-0400"/>
-									<text> 
-										<reference value="#CR1"/>
-									</text>
-									<performer>
-										<assignedEntity>
-											<id root="1.2.840.10213.2.62.7044794679.114298686"/>
-											<assignedPerson>
-												<name>Jane Doctor</name>
-											</assignedPerson>
-										</assignedEntity>
-									</performer>
-									<participant typeCode="NOT">
-										<participantRole>
-											<telecom value="tel:262-966-0120"/>
-											<playingEntity>
-												<name>Dr. Smith</name>
-											</playingEntity>
-										</participantRole>
-									</participant>
-								</act>
-								</entry>
-						</section>
-					</component>
-						<!--
-********************************************************
-  Key Images Sub Section
-********************************************************
--->
-					<component>
-						<section classCode="DOCSECT" moodCode="EVN">>
-							<templateId root="1.3.6.1.4.1.19376.1.4.1.2.14"/>
-							<id root="1.2.840.10213.2.62.704478559484.11428372623"/>
-							<code code="55113-5"
-								codeSystem="2.16.840.1.113883.6.1"
-								codeSystemName="LOINC"
-								displayName="Key Images"/>
-							<title>Key Images</title>
-							<text>Maximum extent of tumor is shown in 
-								<linkHtml href="http://www.example.org/wado?requestType=WADO&amp;...">
-									image 1 <renderMultiMedia referencedObject="refimag1"/>
-								</linkHtml>
-							</text>
-							<entry><!--SOP Instance reference-->
-								<observation classCode="DGIMG" moodcode="EVN" ID="SOP1-2"/>
-							</entry>
-							<entry><!--inline rendered image-->
-								<observationMedia ID="refimag1">
-									<value representation="B64" mediaType="image/jpeg">
-											Bgd3fsET4g...
-									</value>
-								</observationMedia>
-							</entry>
-						</section>
-					</component>
-					<!--
-********************************************************
-  Recommendation Sub Section
-********************************************************
--->
-					<component>
-						<section classCode="DOCSECT" moodCode="EVN">
-							<templateId root="1.2.840.10008.20.x2.x11" />
-							<id root="1.2.840.10213.2.62.7044779.114265201"/>
-								<code code="18783-1"  codeSystem="2.16.840.1.113883.6.1"
-								codeSystemName="LOINC" displayName="Study Recommendation"/>
-							<title>Radiology Recommendation</title>
-							<text>
-								<content ID="rec01">Biopsy should be considered. Follow-up at 3 month interval.
-								</content>
-								<linkHtml href="http://pubs.rsna.org/doi/abs/10.1148/radiol.2372041887"/>
-							</text>
-							<entry>
-								<procedure ID="RadRec1" classCode="PROC" moodCode="PRP"/>
-								<!--local coding scheme -->
-								<code code="9191919" codeSystem="2.16.840.1.56789.6.1"
-									codeSystemName="My Hospital Coding System"
-									displayName="3 month follow-up"/>
-								<effectiveTime value="20141213"/>
-								<text><reference value="#rec01"/></text>
-							</entry>
-						</section>
-					</component>
-				</section>
-			</component>
-		</structuredBody>
-	</component>
+    <!-- 
+    ********************************************************
+      CDA Header
+    ********************************************************
+    -->
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <!-- templateID for the Synoptic Template used, i.e. clinical sub-specialty requirements. Fictional OID assigned under the CCO branch.-->
+    <templateId root="2.16.840.1.113883.3.239.23.12.x" extension="2012-09-04"/>
+    <!-- templateID for the document-->
+    <templateId root="1.2.840.10008.20.x1.x1"/>
+    <id root="2.16.840.1.113883.19" extension="1234567890"/>
+    <code code="18748-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnostic Imaging Report"/>
+    <title>MRI Report for Rectal Cancer</title>
+    <effectiveTime value="20140730120000-0400"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.1.11.16926"/>
+    <languageCode code="en-CA"/>
+    <setId root="2.16.840.1.113883.19" extension="54321"/>
+    <versionNumber value="1"/>
+    <recordTarget>
+        <patientRole>
+            <id root="2.16.840.1.113883.19" extension="12345"/>
+            <!-- Fake ID using HL7 example OID -->
+            <addr use="HP">
+                <streetAddressLine>123 Main St.</streetAddressLine>
+                <city>Ottawa</city>
+                <state>ON</state>
+                <postalCode>K1A 0K9</postalCode>
+                <country>CA</country>
+            </addr>
+            <telecom value="tel:(613)867-5309" use="HP"/>
+            <patient>
+                <name use="L">
+                    <given>Bobo</given>
+                    <family>Clown</family>
+                    <suffix>the 1st</suffix>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" displayName="Male"/>
+                <birthTime value="19601231"/>
+            </patient>
+            <!-- providerOrganization is the healthcare organization that assigned the id sub-element of patientRole. 0..1 MAY.
+            <providerOrganization>
+            </providerOrganization>
+            -->
+        </patientRole>
+    </recordTarget>
+    <!-- We will assume this document has NOT been legally authenticated.
+    <legalAuthenticator>
+    </legalAuthenticator>
+    -->
+    <author>
+        <time value="20140730120000-0400"/>
+        <assignedAuthor>
+            <id root="2.16.840.1.113883.4.347" extension="12345"/>
+            <!-- Fictitious  CPSO# and OID for CPSO (Ontario College of Physicians and Surgeons) -->
+            <id root="2.16.840.1.113883.19.5" extension="TOH1234"/>
+            <!-- Ottawa Hospital Physician ID -->
+            <addr>
+                <streetAddressLine>333 Laurier Avenue West</streetAddressLine>
+                <city>Ottawa</city>
+                <state>ON</state>
+                <postalCode>K1A 0L9</postalCode>
+                <country>CA</country>
+            </addr>
+            <telecom use="WP" value="tel:(613)555-1234"/>
+            <assignedPerson>
+                <name>
+                    <given>Slim</given>
+                    <family>Pickens</family>
+                    <suffix>MD</suffix>
+                </name>
+            </assignedPerson>
+        </assignedAuthor>
+    </author>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="2.16.840.1.113883.19.5"/>
+                <name>The Ottawa Hospital</name>
+                <telecom value="tel:(613)798-5555" use="WP"/>
+                <addr use="WP">
+                    <streetAddressLine>501 Smyth Rd.</streetAddressLine>
+                    <city>Ottawa</city>
+                    <state>ON</state>
+                    <postalCode>K1H 8L6</postalCode>
+                    <country>CA</country>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <!-- we will assume this is the first instance of this report.
+    <relatedDocument typeCode="RPLC">
+    </relatedDocument>    
+    -->
+    <!-- 
+    ********************************************************
+      Imaging Header Elements
+    ********************************************************
+    -->
+    <componentOf>
+        <encompassingEncounter>
+            <id root="1.3.6.4.1.4.1.2835.12" extension="1234567890"/>
+            <effectiveTime value="20140730120000-0400"/>
+        </encompassingEncounter>
+    </componentOf>
+    <inFulfillmentOf>
+        <order>
+            <!--  {root}.33= placer number assigner (CPOE) -->
+            <id root="2.16.840.1.113883.19.4.33" extension="089-927851"/>
+            <!--  {root}.27= accession number assigner (RIS) -->
+            <id root="2.16.840.1.113883.19.4.27" extension="10523475"/>
+        </order>
+    </inFulfillmentOf>
+    <documentationOf>
+        <serviceEvent classCode="ACT">
+            <!-- study instance UID -->
+            <id root="1.2.840.113619.2.62.994044785528.114289542805"/>
+            <!-- DICOM Requested Procedure ID -->
+            <id root="1.2.840.113619.2.62.994044785528.26" extension="654321"/>
+            <code code="RPID629" displayName="MR PELVIS RECTUM" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex"/>
+            <!-- translation code is Modality (0008,0060) -->
+            <translation code="MR" displayName="Magnetic Resonance" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
+            <effectiveTime value="20140730120000-0400"/>
+            <!-- In simple procedures, the physician reading the study is identified in the Author or LegalAuthenticator participation on the ClinicalDocument, and does not need to be re-identified in this element. 
+            <performer typeCode="PRF">
+            </performer>
+            -->
+        </serviceEvent>
+    </documentationOf>
+    <!-- participant is 1..1 SHALL - in this case a referring physician -->
+    <participant typeCode="REF">
+        <assignedEntity classCode="PROV">
+            <id nullFlavor="NI"/>
+            <addr nullFlavor="NI"/>
+            <telecom nullFlavor="NI"/>
+            <assignedPerson>
+                <name>
+                    <given>Ty</given>
+                    <family>Cobb</family>
+                    <suffix>MD</suffix>
+                </name>
+            </assignedPerson>
+        </assignedEntity>
+    </participant>
+    <!-- DataEnterer is 0..1 MAY - e.g., person who transcribes from paper form to electronic system -->
+    <dataEnterer>
+        <assignedEntity>
+            <id root="2.16.840.1.113883.19.5" extension="99999"/>
+            <addr>
+                <streetAddressLine>501 Smyth Rd.</streetAddressLine>
+                <city>Ottawa</city>
+                <state>ON</state>
+                <postalCode>K1H 8L6</postalCode>
+                <country>CA</country>
+            </addr>
+            <telecom use="WP" value="tel:(613)555-1000"/>
+            <assignedPerson>
+                <name>
+                    <given>Data</given>
+                    <family>Enterer</family>
+                </name>
+            </assignedPerson>
+        </assignedEntity>
+    </dataEnterer>
+    <!-- 
+    ********************************************************
+      CDA Body
+    ********************************************************
+    -->
+    <component>
+        <structuredBody>
+            <!-- 
+            ********************************************************
+              Clinical Information Section
+            ********************************************************
+            -->
+            <component>
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <templateId root="1.2.840.10008.20.x2.x1"/>
+                    <id root="1.2.840.10213.2.62.994044785528.114289542805"/>
+                    <code code="55752-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Clinical Information"/>
+                    <title>Clinical Information</title>
+                    <text>The patient was referred for evaluation of...</text>
+                    <!--
+                    ********************************************************
+                      Request Sub Section
+                    ********************************************************
+                    -->
+                    <component>
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.840.10008.20.x2.x6"/>
+                            <id root="1.2.840.10213.2.62.7906994785528.114289506"/>
+                            <code code="55115-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Request"/>
+                            <title>Request</title>
+                            <text>PTA (Iliac Angioplasty) for treatment of symptomatic artherosclerotic disease in both iliac arteries.
+                                    <content ID="CDS001">Procedure ordered by Pat Smith, MD, NPI:8740944987. Classified APPROPRIATE by RadCDS based on ACR Select criteria at 2015-07-21 10:52:31 CDT</content>
+                                </text>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="CDS001-E">
+                                    <id root="1.2.840.90012.1097.9961.100" extension="20150721-16554"/>
+                                    <code code="99SUP155-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedure Appropriate to Indication"/>
+                                    <value xsi:type="CD" code="LA33-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Yes"/>
+                                    <effectiveTime value="20150721105231-0400"/>
+                                    <statusCode code="completed"/>
+                                    <methodCode code="CDS-003" codeSystem="2.16.840.1.113883.19.166" codeSystemName="US DHHS CDS" displayName="ACR Select"/>
+                                    <text>
+                                        <reference value="#CDS001"/>
+                                    </text>
+                                    <author>
+                                        <assignedAuthor>
+                                            <id root="2.16.840.1.113883.19.169" extension="900104"/>
+                                            <assignedAuthoringDevice>
+                                                <softwareName>RadCDS</softwareName>
+                                            </assignedAuthoringDevice>
+                                        </assignedAuthor>
+                                    </author>
+                                    <participant typeCode="REF">
+                                        <participantRole>
+                                            <id root="2.16.840.1.113883.4.6" extension="8740944987"/>
+                                            <playingEntity classCode="PSN">
+                                                <name>Pat Smith, MD</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    <!--
+                    ********************************************************
+                      Procedure Indications Sub Section
+                    ********************************************************
+                    -->
+                    <component>
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.840.10008.20.x2.x12"/>
+                            <id root="1.2.840.10213.2.62.044785528.1142895426"/>
+                            <code code="59768-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedure Indications"/>
+                            <title>Procedure Indications</title>
+                            <text>The procedure is performed as a follow-up for an abnormal screening result.</text>
+                        </section>
+                    </component>
+                </section>
+            </component>
+            <!-- 
+            ********************************************************
+              Imaging Procedure Description Section
+            ********************************************************
+            -->
+            <component>
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <templateId root="1.2.840.10008.20.x2.x2"/>
+                    <!-- Fictitious DCE UUID string, used in sections, labelled sub-sections and entries. -->
+                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                    <code code="55111-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Current imaging procedure descriptions"/>
+                    <title>Imaging Procedure Description</title>
+                    <text>
+                        <list>
+                            <item>
+                                <content ID="01a">A MR study of the rectum was performed with Axial large FOV TSE T2, high resolution 3D T2 SPACE, and...</content>
+                            </item>
+                            <item>
+                                <content ID="01b">Overall Image Quality: Adequate</content>
+                            </item>
+                        </list>
+                    </text>
+                    <!-- 
+                    ***********************************************************
+                      Procedure Technique Entry
+                    ***********************************************************
+                    -->
+                    <entry>
+                        <procedure moodCode="EVN" classCode="PROC">
+                            <templateId root="1.2.840.10008.20.x3.x2"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <procedureCode code="RPID629" displayName="MR Pelvis Rectum" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex"/>
+                            <effectiveTime value="20140730120000-0400"/>
+                            <methodCode code="MR" displayName="Magnetic Resonance" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
+                            <reference value="#01a"/>
+                        </procedure>
+                    </entry>
+                    <!-- 
+                    ***********************************************************
+                      Radiation Exposure and Protection Information Sub Section
+                    ***********************************************************
+                    -->
+                    <component>
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.840.10008.20.x2.x7"/>
+                            <id root="1.2.840.10213.2.62.704478559484.11428372623"/>
+                            <code code="73569-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Radiation Exposure And Protection Information"/>
+                            <title> Radiation Exposure and Protection Information</title>
+                            <text>A dosage of...</text>
+                            <entry>
+                                <procedure classCode="PROC" moodCode="EVN">
+                                    <code code="99SUP155-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="DCM" displayName="Patient exposure to ionizing radiation"/>
+                                    <participant typeCode="RESP">
+                                        <participantRole>
+                                            <id root="2.16.840.1.113883.4.6" extension="980003719"/>
+                                            <functionCode code="113850" codeSystem="2.16.840.1.113883.6.1" codeSystemName="DCM" displayName="Irradiation Authorizing"/>
+                                            <playingEntity>
+                                                <name>
+                                                    <given>Martha</given>
+                                                    <family>Radiologist</family>
+                                                </name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </procedure>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="pregnancy">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="1.2.840.10213.2.62.7044779.114265201"/>
+                                    <code code="364320009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pregnancy observable"/>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CD" code="60001007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="not pregnant"/>
+                                    <effectiveTime value="20140914171504-0400"/>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    <!-- 
+                    ***********************************************************
+                      DICOM Object Catalog Sub Section
+                    ***********************************************************
+                    -->
+                    <component>
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.6.1.1"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <code code="121181" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="DICOM Object Catalog"/>
+                        </section>
+                    </component>
+                    <!-- 
+                    ********************************************************
+                      Image Quality Entry
+                    ********************************************************
+                    -->
+                    <entry>
+                        <observation classCode="OBS" moodCode="EVN" ID="Q1">
+                            <templateId root="1.2.840.10008.20.x3.x4"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <code code="111050" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Image Quality Assessment"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="20140730120000-0400"/>
+                            <value xsi:type="CD" code="RID12" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex" displayName="Diagnostic quality"/>
+                            <text>
+                                <reference value="#01b"/>
+                            </text>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+            <!-- 
+            ********************************************************
+              Comparison Study Section
+            ********************************************************
+            -->
+            <component>
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <templateId root="1.2.840.10008.20.x2.x3"/>
+                    <id root="1.2.840.10213.2.62.994056444785528.1142893564536542805"/>
+                    <code code="18834-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Radiology Comparison Study"/>
+                    <title>Comparison Study</title>
+                    <text>A prior MRI performed on ***DATE*** showed that...</text>
+                </section>
+            </component>
+            <!--
+            ********************************************************
+              Findings Section
+            ********************************************************
+            -->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.6.1.2"/>
+                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                    <code code="59776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedure Findings"/>
+                    <title>Findings</title>
+                    <!-- 
+                    ********************************************************
+                      Tumour Location Subsection (i.e. Labelled Subsection)
+                    ********************************************************
+                    -->
+                    <component>
+                        <section ID="Tumour Location">
+                            <templateId root="1.2.840.10008.20.x2.x9"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <title>Tumour Location</title>
+                            <text>
+                                <list>
+                                    <item>
+                                        <content ID="02">Tumour Location (from anal verge): Low (0-5.0 cm)</content>
+                                    </item>
+                                    <item>
+                                        <content ID="03">Distance of the Lowest Extent of Tumour from Anal Verge: 3 cm</content>
+                                    </item>
+                                    <item>
+                                        <content ID="04">Distance of the Lowest Extent of Tumour from Top of Anal Sphincter: -1 cm</content>
+                                    </item>
+                                    <item>
+                                        <content ID="05">Relationship to Anterior Peritoneal Reflection: Below</content>
+                                    </item>
+                                </list>
+                            </text>
+                            <!-- 
+                            ********************************************************
+                              Coded Observation - single select
+                            ********************************************************
+                            -->
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q2">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q2" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Tumour Location from Anal Verge"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q2a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Low (0-5.0 cm)"/>
+                                    <text>
+                                        <reference value="#02"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <!-- 
+                            ********************************************************
+                             Quantity Measurement
+                            ********************************************************
+                            -->
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q3">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q3" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance of Lowest Extent of Tumour from Anal Verge"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="cm">3</value>
+                                    <text>
+                                        <reference value="#03"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q4">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q4" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance of Lowest Extent of Tumor from Top of Anal Sphincter"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="cm">-1</value>
+                                    <text>
+                                        <reference value="#04"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q5">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q5" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Relationship to Anterior Peritoneal Reflection"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q5c" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Below"/>
+                                    <text>
+                                        <reference value="#05"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section ID="Tumour Characteristics">
+                            <templateId root="1.2.840.10008.20.x2.x9"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <title>Tumour Characteristics</title>
+                            <text>
+                                <list>
+                                    <item>
+                                        <content ID="06a">Circumferential Extent/Location from: 9 o'clock</content>
+                                    </item>
+                                    <item>
+                                        <content ID="06b">Circumferential Extent/Location to: 3 o'clock</content>
+                                    </item>
+                                    <item>
+                                        <content ID="07">Craniocaudad Extent: 5 cm</content>
+                                    </item>
+                                    <item>
+                                        <content ID="08">The tumour is not mucinous.</content>
+                                    </item>
+                                </list>
+                            </text>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q6a">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q6a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Circumferential Extent/Location from"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="260343005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="9 o'clock position"/>
+                                    <text>
+                                        <reference value="#06a"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q6b">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q6a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Circumferential Extent/Location to"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="260330005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="3 o'clock position"/>
+                                    <text>
+                                        <reference value="#06b"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q7">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q7" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Craniocaudad Extent"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="cm">5</value>
+                                    <text>
+                                        <reference value="#07"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q8">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q8" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Mucinous"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q8a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
+                                    <text>
+                                        <reference value="#08"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section ID="T-Category">
+                            <templateId root="1.2.840.10008.20.x2.x9"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <title>T-Category</title>
+                            <text>
+                                <list>
+                                    <item>
+                                        <content ID="09" styleCode="Bold">T-Category: T4 [HIGH &#x2013; ACR Cat3]</content>
+                                    </item>
+                                    <item>
+                                        <content ID="10a">Structures with Possible Invasion: Prostate</content>
+                                    </item>
+                                    <item>
+                                        <content ID="10b">Structures with Possible Invasion: Pubococcygeus</content>
+                                    </item>
+                                    <item>
+                                        <content ID="11">The lower extent of the tumour is at or below the top border of the puborectalis</content>
+                                    </item>
+                                    <item>
+                                        <content ID="12">The most penetrating component of the tumour below the top border of the puborectalis is through the external sphincter.  There is definite involvement of adjacent organs. (T4)</content>
+                                    </item>
+                                </list>
+                            </text>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q9">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q9" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="T-category"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q9e" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="T4"/>
+                                    <text>
+                                        <reference value="#09"/>
+                                    </text>
+                                    <!--Actionable Finding-->
+                                    <interpretationCode code="HH" codeSystem="2.16.840.1.113883.5.83" codeSystemName="ObservationInterpretation" displayName="High Alert">
+                                        <translation code="RID49482" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RADLEX" displayName="ACR Category 3 Actionable Finding"/>
+                                    </interpretationCode>
+                                </observation>
+                            </entry>
+                            <!-- 
+                            ********************************************************
+                              Coded Observation - multi-select
+                            ********************************************************
+                            -->
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q10">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q10" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Structures with Possible Invasion"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="41216001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="prostatic structure"/>
+                                    <text>
+                                        <reference value="#10a"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q10">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q10" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Structures with Possible Invasion"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="22355009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="structure of pubococcygeus muscle"/>
+                                    <text>
+                                        <reference value="#10b"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q11">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q11" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Lower extent of tumour at or below top border of puborectalis"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q11b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Yes"/>
+                                    <text>
+                                        <reference value="#09"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q12">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q12" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Most penetrating component of tumour below top border of puborectalis is"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q12f" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Through external sphincter and definite involvement of adjacent organs (i.e., prostate, vagina) (T4)"/>
+                                    <text>
+                                        <reference value="#12"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section ID="Distance to the Mesorectal Fascia (MRF) and Extramural Depth of Invasion (EMD)">
+                            <templateId root="1.2.840.10008.20.x2.x9"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <title>Distance to the Mesorectal Fascia (MRF) and Extramural Depth of Invasion (EMD)</title>
+                            <text>
+                                <list>
+                                    <item>
+                                        <content ID="13a">Minimum Distance of Primary Tumour to the Mesorectal Fascia: 0 mm</content>
+                                    </item>
+                                    <!-- Comment out the content NOT relevant this report instance
+                                    <item>
+                                        <content ID="13b">Minimum Distance of Primary Tumour to the Mesorectal Fascia: N/A</content>
+                                    </item>
+                                    -->
+                                    <item>
+                                        <content ID="15">Extramural Depth of Invasion (EMD) at this level: 10 mm</content>
+                                    </item>
+                                    <item>
+                                        <content ID="16">There are no tumour spiculations closer to the MRF.</content>
+                                    </item>
+                                    <!--
+                                    <item>
+                                        <content ID="17">Distance: N/A</content>
+                                    </item>
+                                    <item>
+                                        <content ID="18">Location: N/A</content>
+                                    </item>
+                                    -->
+                                    <item>
+                                        <content ID="19">There are no other components of the tumour (any T2-3) closer to the MRF.</content>
+                                    </item>
+                                    <!--
+                                    <item>
+                                        <content ID="20">Distance: N/A</content>
+                                    </item>
+                                    <item>
+                                        <content ID="21">Location: N/A</content>
+                                    </item>
+                                    -->
+                                </list>
+                            </text>
+                            <!-- 
+                            ********************************************************
+                              When answer is a PQ
+                            ********************************************************
+                            -->
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q13a">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q13a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Minimum Distance of Primary Tumour to Mesorectal Fascia"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="mm">0</value>
+                                    <text>
+                                        <reference value="#13a"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <!-- 
+                            ********************************************************
+                              When answer is coded (not used in this report instance but included to demonstrate how nullFlavor code is utilized)
+                            ********************************************************
+                            -->
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q13b">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q13b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Minimum Distance of Primary Tumour to Mesorectal Fascia"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <text>
+                                        <reference value="#13b"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q15">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q15" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Extramural Depth of Invasion (EMD) at this level"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="mm">10</value>
+                                    <text>
+                                        <reference value="#15"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q16">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q16" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Tumour Spiculations Closer to the MRF"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q16a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
+                                    <text>
+                                        <reference value="#16"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <!-- Content that is dependent on the parent answer is included below but commented out. Inclusion will depend on the specific clinical content implementation guide.
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q17">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q17" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" nullFlavor="NA"/>
+                                    <text>
+                                        <reference value="#17"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q18">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q18" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <text>
+                                        <reference value="#18"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            -->
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q19">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q16" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Other Component of Tumour (any T2-3) closer to the MRF"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q19b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
+                                    <text>
+                                        <reference value="#19"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <!--
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q20">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q20" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" nullFlavor="NA"/>
+                                    <text>
+                                        <reference value="#20"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q21">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q21" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <text>
+                                        <reference value="#21"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            -->
+                        </section>
+                    </component>
+                    <component>
+                        <section ID="Extramural Vascular Invasion (EMVI)">
+                            <templateId root="1.2.840.10008.20.x2.x9"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <title>Extramural Vascular Invasion (EMVI)</title>
+                            <text>
+                                <list>
+                                    <item>
+                                        <content ID="22">EMVI is present.</content>
+                                    </item>
+                                </list>
+                            </text>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q22">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q22" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="EMVI"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q22c" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Present"/>
+                                    <text>
+                                        <reference value="#22"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section ID="Mesorectal Lymph Nodes and Tumour Deposits">
+                            <templateId root="1.2.840.10008.20.x2.x9"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <title>Mesorectal Lymph Nodes and Tumour Deposits</title>
+                            <text>
+                                <list>
+                                    <item>
+                                        <content ID="23">There are suspicious mesorectal lymph nodes and/or tumour deposits.</content>
+                                    </item>
+                                    <item>
+                                        <content ID="24">Shortest distance of any suspicious mesorectal lymph node/tumour deposit: 7 mm</content>
+                                    </item>
+                                    <item>
+                                        <content ID="25">Location of lymph node / deposit closest to MRF: Above tumour</content>
+                                    </item>
+                                    <item>
+                                        <content ID="26">Clock location of lymph node / deposit closest to MRF: 10 o'clock</content>
+                                    </item>
+                                </list>
+                            </text>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q23">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q23" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Suspicious mesorectal lymph nodes and/or tumour deposits"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q23b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Yes"/>
+                                    <text>
+                                        <reference value="#23"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q24">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q24" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Shortest distance of any suspicious mesorectal lymph node/tumour deposit"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="mm">7</value>
+                                    <text>
+                                        <reference value="#24"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q25">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q25" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location of lymph node / deposit closest to MRF"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q25b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Above tumour"/>
+                                    <text>
+                                        <reference value="#25"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q26">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q26" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Clock location of lymph node / deposit closest to MRF"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="260322009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="10 o'clock position"/>
+                                    <text>
+                                        <reference value="#26"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section ID="Extramesorectal Lymph Nodes">
+                            <templateId root="1.2.840.10008.20.x2.x9"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <title>Extramesorectal Lymph Nodes</title>
+                            <text>
+                                <list>
+                                    <item>
+                                        <content ID="28">There are extramesorectal lymph node(s) with suspicious morphology.</content>
+                                    </item>
+                                    <item>
+                                        <content ID="29">Location(s) of extramesorectal lymph nodes with suspicious morphology or signal: right internal iliac; right common iliac</content>
+                                    </item>
+                                </list>
+                            </text>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q28">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q28" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Extramesorectal lymph node(s) with suspicious morphology"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q28b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Yes"/>
+                                    <text>
+                                        <reference value="#28"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                            <entry>
+                                <observation classCode="OBS" moodCode="EVN" ID="Q29">
+                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                                    <code code="Q29" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location(s) of extramesorectal lymph nodes with suspicious morphology or signal"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <text>
+                                        <reference value="#29"/>
+                                    </text>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                </section>
+            </component>
+            <!--
+            ********************************************************
+              Impressions Section
+            ********************************************************
+            -->
+            <component>
+                <section>
+                    <templateId root="1.2.840.10008.20.x2.x4"/>
+                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                    <code code="19005-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Impressions"/>
+                    <title>Impression</title>
+                    <text>
+                        <content ID="30">Additional Comments: Obstructing tumour</content>
+                    </text>
+                    <entry>
+                        <observation classCode="OBS" moodCode="EVN" ID="Q30">
+                            <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <code code="Q30" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Additional Comments"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="20140730120000-0400"/>
+                            <value xsi:type="CD" nullFlavor="NA"/>
+                            <text>
+                                <reference value="#30"/>
+                            </text>
+                        </observation>
+                    </entry>
+                    <!--
+                    ********************************************************
+                      Communication of Actionable Findings Sub Section
+                    ********************************************************
+                    -->
+                    <component>
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.840.10008.20.x2.x10"/>
+                            <id root="1.2.840.10213.2.62.7044794679.114296787"/>
+                            <code code="73568-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Communication of Critical Results"/>
+                            <title>Communication of Actionable Results</title>
+                            <text>
+                                <content ID="CR1">Dr. Smith was phoned at 262-966-0120 at 3:14pm on Wednesday, June 4, 2014, and the T4 classification was discussed directly with Dr. Smith to explain the follow-up recommendation of...</content>
+                                <!--T4 staging classification from <reference value="#09"/> above in Findings -->
+                            </text>
+                            <entry>
+                                <act classCode="ACT" moodCode="EVN">
+                                    <code code="99SUP155-5" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Results Communicated"/>
+                                    <effectiveTime value="20140604221400-0400"/>
+                                    <text>
+                                        <reference value="#CR1"/>
+                                    </text>
+                                    <performer>
+                                        <assignedEntity>
+                                            <id root="1.2.840.10213.2.62.7044794679.114298686"/>
+                                            <assignedPerson>
+                                                <name>Jane Doctor</name>
+                                            </assignedPerson>
+                                        </assignedEntity>
+                                    </performer>
+                                    <participant typeCode="NOT">
+                                        <participantRole>
+                                            <telecom value="tel:262-966-0120"/>
+                                            <playingEntity>
+                                                <name>Dr. Smith</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </act>
+                            </entry>
+                        </section>
+                    </component>
+                    <!--
+                    ********************************************************
+                      Key Images Sub Section
+                    ********************************************************
+                    -->
+                    <component>
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.3.6.1.4.1.19376.1.4.1.2.14"/>
+                            <id root="1.2.840.10213.2.62.704478559484.11428372623"/>
+                            <code code="55113-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Key Images"/>
+                            <title>Key Images</title>
+                            <text>Maximum extent of tumor is shown in 
+                                <linkHtml href="http://www.example.org/wado?requestType=WADO&amp;...">
+                                    image 1 <renderMultiMedia referencedObject="refimag1"/>
+                                </linkHtml>
+                            </text>
+                            <entry>
+                                <!--SOP Instance reference-->
+                                <observation classCode="DGIMG" moodcode="EVN" ID="SOP1-2"/>
+                            </entry>
+                            <entry>
+                                <!--inline rendered image-->
+                                <observationMedia ID="refimag1">
+                                    <value representation="B64" mediaType="image/jpeg">Bgd3fsET4g...</value>
+                                </observationMedia>
+                            </entry>
+                        </section>
+                    </component>
+                    <!--
+                    ********************************************************
+                      Recommendation Sub Section
+                    ********************************************************
+                    -->
+                    <component>
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.840.10008.20.x2.x11"/>
+                            <id root="1.2.840.10213.2.62.7044779.114265201"/>
+                            <code code="18783-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Study Recommendation"/>
+                            <title>Radiology Recommendation</title>
+                            <text>
+                                <content ID="rec01">Biopsy should be considered. Follow-up at 3 month interval.
+                                </content>
+                                <linkHtml href="http://pubs.rsna.org/doi/abs/10.1148/radiol.2372041887"/>
+                            </text>
+                            <entry>
+                                <procedure ID="RadRec1" classCode="PROC" moodCode="PRP"/>
+                                <!--local coding scheme -->
+                                <code code="9191919" codeSystem="2.16.840.1.56789.6.1" codeSystemName="My Hospital Coding System" displayName="3 month follow-up"/>
+                                <effectiveTime value="20141213"/>
+                                <text>
+                                    <reference value="#rec01"/>
+                                </text>
+                            </entry>
+                        </section>
+                    </component>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
 </ClinicalDocument>
