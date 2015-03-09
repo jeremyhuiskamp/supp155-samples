@@ -118,18 +118,18 @@
     -->
     <!-- participant is 1..1 SHALL - in this case a referring physician -->
     <participant typeCode="REF">
-        <assignedEntity classCode="PROV">
+        <associatedEntity classCode="PROV">
             <id nullFlavor="NI"/>
             <addr nullFlavor="NI"/>
             <telecom nullFlavor="NI"/>
-            <assignedPerson>
+            <associatedPerson>
                 <name>
                     <given>Ty</given>
                     <family>Cobb</family>
                     <suffix>MD</suffix>
                 </name>
-            </assignedPerson>
-        </assignedEntity>
+            </associatedPerson>
+        </associatedEntity>
     </participant>
     <inFulfillmentOf>
         <order>
