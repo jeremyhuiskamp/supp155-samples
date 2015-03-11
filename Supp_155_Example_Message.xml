@@ -390,7 +390,7 @@
                     ********************************************************
                     -->
                     <component>
-                        <section ID="Tumour Location">
+                        <section ID="TumourLocation">
                             <templateId root="1.2.840.10008.20.x2.x9"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                             <title>Tumour Location</title>
@@ -475,7 +475,7 @@
                         </section>
                     </component>
                     <component>
-                        <section ID="Tumour Characteristics">
+                        <section ID="TumourCharacteristics">
                             <templateId root="1.2.840.10008.20.x2.x9"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                             <title>Tumour Characteristics</title>
@@ -650,7 +650,7 @@
                         </section>
                     </component>
                     <component>
-                        <section ID="Distance to the Mesorectal Fascia (MRF) and Extramural Depth of Invasion (EMD)">
+                        <section ID="DistanceToTheMesorectalFasciaAndExtramuralDepthOfInvasion">
                             <templateId root="1.2.840.10008.20.x2.x9"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                             <title>Distance to the Mesorectal Fascia (MRF) and Extramural Depth of Invasion (EMD)</title>
@@ -825,7 +825,7 @@
                         </section>
                     </component>
                     <component>
-                        <section ID="Extramural Vascular Invasion (EMVI)">
+                        <section ID="ExtramuralVascularInvasion">
                             <templateId root="1.2.840.10008.20.x2.x9"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                             <title>Extramural Vascular Invasion (EMVI)</title>
@@ -852,7 +852,7 @@
                         </section>
                     </component>
                     <component>
-                        <section ID="Mesorectal Lymph Nodes and Tumour Deposits">
+                        <section ID="MesorectalLymphNodesAndTumourDeposits">
                             <templateId root="1.2.840.10008.20.x2.x9"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                             <title>Mesorectal Lymph Nodes and Tumour Deposits</title>
@@ -927,7 +927,7 @@
                         </section>
                     </component>
                     <component>
-                        <section ID="Extramesorectal Lymph Nodes">
+                        <section ID="ExtramesorectalLymphNodes">
                             <templateId root="1.2.840.10008.20.x2.x9"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                             <title>Extramesorectal Lymph Nodes</title>
