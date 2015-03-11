@@ -321,8 +321,8 @@
                                     <id root="1.2.840.10213.2.62.7044779.114265201"/>
                                     <code code="364320009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pregnancy observable"/>
                                     <statusCode code="completed"/>
-                                    <value xsi:type="CD" code="60001007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="not pregnant"/>
                                     <effectiveTime value="20140914171504-0400"/>
+                                    <value xsi:type="CD" code="60001007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="not pregnant"/>
                                 </observation>
                             </entry>
                         </section>
