@@ -420,12 +420,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q2" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Tumour Location from Anal Verge"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q2a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Low (0-5.0 cm)"/>
                                     <text>
                                         <reference value="#02"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q2a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Low (0-5.0 cm)"/>
                                 </observation>
                             </entry>
                             <!-- 
@@ -438,12 +438,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q3" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance of Lowest Extent of Tumour from Anal Verge"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" unit="cm">3</value>
                                     <text>
                                         <reference value="#03"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="cm">3</value>
                                 </observation>
                             </entry>
                             <entry>
@@ -451,12 +451,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q4" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance of Lowest Extent of Tumor from Top of Anal Sphincter"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" unit="cm">-1</value>
                                     <text>
                                         <reference value="#04"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="cm">-1</value>
                                 </observation>
                             </entry>
                             <entry>
@@ -464,12 +464,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q5" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Relationship to Anterior Peritoneal Reflection"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q5c" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Below"/>
                                     <text>
                                         <reference value="#05"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q5c" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Below"/>
                                 </observation>
                             </entry>
                         </section>
@@ -500,12 +500,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q6a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Circumferential Extent/Location from"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="260343005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="9 o'clock position"/>
                                     <text>
                                         <reference value="#06a"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="260343005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="9 o'clock position"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -513,12 +513,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q6a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Circumferential Extent/Location to"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="260330005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="3 o'clock position"/>
                                     <text>
                                         <reference value="#06b"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="260330005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="3 o'clock position"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -526,12 +526,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q7" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Craniocaudad Extent"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" unit="cm">5</value>
                                     <text>
                                         <reference value="#07"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="cm">5</value>
                                 </observation>
                             </entry>
                             <entry>
@@ -539,12 +539,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q8" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Mucinous"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q8a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
                                     <text>
                                         <reference value="#08"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q8a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
                                 </observation>
                             </entry>
                         </section>
@@ -578,12 +578,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q9" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="T-category"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q9e" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="T4"/>
                                     <text>
                                         <reference value="#09"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q9e" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="T4"/>
                                     <!--Actionable Finding-->
                                     <interpretationCode code="HH" codeSystem="2.16.840.1.113883.5.83" codeSystemName="ObservationInterpretation" displayName="High Alert">
                                         <translation code="RID49482" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RADLEX" displayName="ACR Category 3 Actionable Finding"/>
@@ -600,12 +600,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q10" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Structures with Possible Invasion"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="41216001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="prostatic structure"/>
                                     <text>
                                         <reference value="#10a"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="41216001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="prostatic structure"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -613,12 +613,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q10" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Structures with Possible Invasion"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="22355009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="structure of pubococcygeus muscle"/>
                                     <text>
                                         <reference value="#10b"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="22355009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="structure of pubococcygeus muscle"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -626,12 +626,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q11" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Lower extent of tumour at or below top border of puborectalis"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q11b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Yes"/>
                                     <text>
                                         <reference value="#09"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q11b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Yes"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -639,12 +639,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q12" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Most penetrating component of tumour below top border of puborectalis is"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q12f" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Through external sphincter and definite involvement of adjacent organs (i.e., prostate, vagina) (T4)"/>
                                     <text>
                                         <reference value="#12"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q12f" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Through external sphincter and definite involvement of adjacent organs (i.e., prostate, vagina) (T4)"/>
                                 </observation>
                             </entry>
                         </section>
@@ -701,12 +701,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q13a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Minimum Distance of Primary Tumour to Mesorectal Fascia"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" unit="mm">0</value>
                                     <text>
                                         <reference value="#13a"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="mm">0</value>
                                 </observation>
                             </entry>
                             <!-- 
@@ -719,12 +719,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q13b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Minimum Distance of Primary Tumour to Mesorectal Fascia"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" nullFlavor="NA"/>
                                     <text>
                                         <reference value="#13b"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -732,12 +732,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q15" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Extramural Depth of Invasion (EMD) at this level"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" unit="mm">10</value>
                                     <text>
                                         <reference value="#15"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="mm">10</value>
                                 </observation>
                             </entry>
                             <entry>
@@ -745,12 +745,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q16" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Tumour Spiculations Closer to the MRF"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q16a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
                                     <text>
                                         <reference value="#16"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q16a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
                                 </observation>
                             </entry>
                             <!-- Content that is dependent on the parent answer is included below but commented out. Inclusion will depend on the specific clinical content implementation guide.
@@ -759,12 +759,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q17" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" nullFlavor="NA"/>
                                     <text>
                                         <reference value="#17"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" nullFlavor="NA"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -772,12 +772,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q18" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" nullFlavor="NA"/>
                                     <text>
                                         <reference value="#18"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
                                 </observation>
                             </entry>
                             -->
@@ -786,12 +786,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q16" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Other Component of Tumour (any T2-3) closer to the MRF"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q19b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
                                     <text>
                                         <reference value="#19"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q19b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
                                 </observation>
                             </entry>
                             <!--
@@ -800,12 +800,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q20" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" nullFlavor="NA"/>
                                     <text>
                                         <reference value="#20"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" nullFlavor="NA"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -813,12 +813,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q21" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" nullFlavor="NA"/>
                                     <text>
                                         <reference value="#21"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
                                 </observation>
                             </entry>
                             -->
@@ -841,12 +841,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q22" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="EMVI"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q22c" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Present"/>
                                     <text>
                                         <reference value="#22"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q22c" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Present"/>
                                 </observation>
                             </entry>
                         </section>
@@ -877,12 +877,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q23" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Suspicious mesorectal lymph nodes and/or tumour deposits"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q23b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Yes"/>
                                     <text>
                                         <reference value="#23"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q23b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Yes"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -890,12 +890,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q24" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Shortest distance of any suspicious mesorectal lymph node/tumour deposit"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" unit="mm">7</value>
                                     <text>
                                         <reference value="#24"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="PQ" unit="mm">7</value>
                                 </observation>
                             </entry>
                             <entry>
@@ -903,12 +903,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q25" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location of lymph node / deposit closest to MRF"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q25b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Above tumour"/>
                                     <text>
                                         <reference value="#25"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q25b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Above tumour"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -916,12 +916,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q26" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Clock location of lymph node / deposit closest to MRF"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="260322009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="10 o'clock position"/>
                                     <text>
                                         <reference value="#26"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="260322009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="10 o'clock position"/>
                                 </observation>
                             </entry>
                         </section>
@@ -946,12 +946,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q28" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Extramesorectal lymph node(s) with suspicious morphology"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" code="Q28b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Yes"/>
                                     <text>
                                         <reference value="#28"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" code="Q28b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Yes"/>
                                 </observation>
                             </entry>
                             <entry>
@@ -959,12 +959,12 @@
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q29" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location(s) of extramesorectal lymph nodes with suspicious morphology or signal"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" nullFlavor="NA"/>
                                     <text>
                                         <reference value="#29"/>
                                     </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20140730120000-0400"/>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
                                 </observation>
                             </entry>
                         </section>
@@ -990,12 +990,12 @@
                             <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                             <code code="Q30" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Additional Comments"/>
-                            <statusCode code="completed"/>
-                            <effectiveTime value="20140730120000-0400"/>
-                            <value xsi:type="CD" nullFlavor="NA"/>
                             <text>
                                 <reference value="#30"/>
                             </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="20140730120000-0400"/>
+                            <value xsi:type="CD" nullFlavor="NA"/>
                         </observation>
                     </entry>
                     <!--
