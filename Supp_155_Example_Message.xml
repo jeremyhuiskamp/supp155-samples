@@ -1057,7 +1057,7 @@
                             </text>
                             <entry>
                                 <!--SOP Instance reference-->
-                                <observation classCode="DGIMG" moodcode="EVN" ID="SOP1-2"/>
+                                <observation classCode="DGIMG" moodCode="EVN" ID="SOP1-2"/>
                             </entry>
                             <entry>
                                 <!--inline rendered image-->
