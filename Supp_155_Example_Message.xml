@@ -1084,13 +1084,14 @@
                                 <linkHtml href="http://pubs.rsna.org/doi/abs/10.1148/radiol.2372041887"/>
                             </text>
                             <entry>
-                                <procedure ID="RadRec1" classCode="PROC" moodCode="PRP"/>
-                                <!--local coding scheme -->
-                                <code code="9191919" codeSystem="2.16.840.1.56789.6.1" codeSystemName="My Hospital Coding System" displayName="3 month follow-up"/>
-                                <effectiveTime value="20141213"/>
-                                <text>
-                                    <reference value="#rec01"/>
-                                </text>
+                                <procedure ID="RadRec1" classCode="PROC" moodCode="PRP">
+                                    <!--local coding scheme -->
+                                    <code code="9191919" codeSystem="2.16.840.1.56789.6.1" codeSystemName="My Hospital Coding System" displayName="3 month follow-up"/>
+                                    <text>
+                                        <reference value="#rec01"/>
+                                    </text>
+                                    <effectiveTime value="20141213"/>
+                                </procedure>
                             </entry>
                         </section>
                     </component>
