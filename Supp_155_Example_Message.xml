@@ -211,6 +211,7 @@
                                     <value xsi:type="CD" code="LA33-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Yes"/>
                                     <methodCode code="CDS-003" codeSystem="2.16.840.1.113883.19.166" codeSystemName="US DHHS CDS" displayName="ACR Select"/>
                                     <author>
+                                        <time value="20150721105231-0400" />
                                         <assignedAuthor>
                                             <id root="2.16.840.1.113883.19.169" extension="900104"/>
                                             <assignedAuthoringDevice>
