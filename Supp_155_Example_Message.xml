@@ -1052,9 +1052,8 @@
                             <code code="55113-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Key Images"/>
                             <title>Key Images</title>
                             <text>Maximum extent of tumor is shown in 
-                                <linkHtml href="http://www.example.org/wado?requestType=WADO&amp;...">
-                                    image 1 <renderMultiMedia referencedObject="refimag1"/>
-                                </linkHtml>
+                                <linkHtml href="http://www.example.org/wado?requestType=WADO&amp;...">image 1</linkHtml>
+                                <renderMultiMedia referencedObject="refimag1"/>
                             </text>
                             <entry>
                                 <!--SOP Instance reference-->
