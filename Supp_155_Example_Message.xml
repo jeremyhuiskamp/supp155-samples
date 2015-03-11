@@ -1016,10 +1016,10 @@
                             <entry>
                                 <act classCode="ACT" moodCode="EVN">
                                     <code code="99SUP155-5" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Results Communicated"/>
-                                    <effectiveTime value="20140604221400-0400"/>
                                     <text>
                                         <reference value="#CR1"/>
                                     </text>
+                                    <effectiveTime value="20140604221400-0400"/>
                                     <performer>
                                         <assignedEntity>
                                             <id root="1.2.840.10213.2.62.7044794679.114298686"/>
