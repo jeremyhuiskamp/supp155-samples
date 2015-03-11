@@ -200,7 +200,7 @@
                                     <content ID="CDS001">Procedure ordered by Pat Smith, MD, NPI:8740944987. Classified APPROPRIATE by RadCDS based on ACR Select criteria at 2015-07-21 10:52:31 CDT</content>
                                 </text>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="CDS001-E">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <id root="1.2.840.90012.1097.9961.100" extension="20150721-16554"/>
                                     <code code="99SUP155-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedure Appropriate to Indication"/>
                                     <text>
@@ -292,7 +292,7 @@
                     ********************************************************
                     -->
                     <entry>
-                        <observation classCode="OBS" moodCode="EVN" ID="Q1">
+                        <observation classCode="OBS" moodCode="EVN">
                             <templateId root="1.2.840.10008.20.x3.x4"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                             <code code="111050" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Image Quality Assessment"/>
@@ -334,7 +334,7 @@
                                 </procedure>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="pregnancy">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="1.2.840.10213.2.62.7044779.114265201"/>
                                     <code code="364320009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pregnancy observable"/>
@@ -416,7 +416,7 @@
                             ********************************************************
                             -->
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q2">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q2" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Tumour Location from Anal Verge"/>
@@ -434,7 +434,7 @@
                             ********************************************************
                             -->
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q3">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q3" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance of Lowest Extent of Tumour from Anal Verge"/>
@@ -447,7 +447,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q4">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q4" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance of Lowest Extent of Tumor from Top of Anal Sphincter"/>
@@ -460,7 +460,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q5">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q5" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Relationship to Anterior Peritoneal Reflection"/>
@@ -496,7 +496,7 @@
                                 </list>
                             </text>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q6a">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q6a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Circumferential Extent/Location from"/>
@@ -509,7 +509,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q6b">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q6a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Circumferential Extent/Location to"/>
@@ -522,7 +522,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q7">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q7" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Craniocaudad Extent"/>
@@ -535,7 +535,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q8">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q8" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Mucinous"/>
@@ -574,7 +574,7 @@
                                 </list>
                             </text>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q9">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q9" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="T-category"/>
@@ -596,7 +596,7 @@
                             ********************************************************
                             -->
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q10">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q10" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Structures with Possible Invasion"/>
@@ -609,7 +609,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q10">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q10" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Structures with Possible Invasion"/>
@@ -622,7 +622,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q11">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q11" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Lower extent of tumour at or below top border of puborectalis"/>
@@ -635,7 +635,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q12">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q12" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Most penetrating component of tumour below top border of puborectalis is"/>
@@ -697,7 +697,7 @@
                             ********************************************************
                             -->
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q13a">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q13a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Minimum Distance of Primary Tumour to Mesorectal Fascia"/>
@@ -715,7 +715,7 @@
                             ********************************************************
                             -->
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q13b">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q13b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Minimum Distance of Primary Tumour to Mesorectal Fascia"/>
@@ -728,7 +728,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q15">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q15" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Extramural Depth of Invasion (EMD) at this level"/>
@@ -741,7 +741,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q16">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q16" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Tumour Spiculations Closer to the MRF"/>
@@ -755,7 +755,7 @@
                             </entry>
                             <!-- Content that is dependent on the parent answer is included below but commented out. Inclusion will depend on the specific clinical content implementation guide.
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q17">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q17" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance"/>
@@ -768,7 +768,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q18">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q18" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location"/>
@@ -782,7 +782,7 @@
                             </entry>
                             -->
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q19">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q16" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Other Component of Tumour (any T2-3) closer to the MRF"/>
@@ -796,7 +796,7 @@
                             </entry>
                             <!--
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q20">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q20" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance"/>
@@ -809,7 +809,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q21">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q21" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location"/>
@@ -837,7 +837,7 @@
                                 </list>
                             </text>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q22">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q22" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="EMVI"/>
@@ -873,7 +873,7 @@
                                 </list>
                             </text>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q23">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q23" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Suspicious mesorectal lymph nodes and/or tumour deposits"/>
@@ -886,7 +886,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q24">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.14"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q24" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Shortest distance of any suspicious mesorectal lymph node/tumour deposit"/>
@@ -899,7 +899,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q25">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q25" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location of lymph node / deposit closest to MRF"/>
@@ -912,7 +912,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q26">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q26" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Clock location of lymph node / deposit closest to MRF"/>
@@ -942,7 +942,7 @@
                                 </list>
                             </text>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q28">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q28" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Extramesorectal lymph node(s) with suspicious morphology"/>
@@ -955,7 +955,7 @@
                                 </observation>
                             </entry>
                             <entry>
-                                <observation classCode="OBS" moodCode="EVN" ID="Q29">
+                                <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                                     <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                                     <code code="Q29" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location(s) of extramesorectal lymph nodes with suspicious morphology or signal"/>
@@ -986,7 +986,7 @@
                         <content ID="id30">Additional Comments: Obstructing tumour</content>
                     </text>
                     <entry>
-                        <observation classCode="OBS" moodCode="EVN" ID="Q30">
+                        <observation classCode="OBS" moodCode="EVN">
                             <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
                             <code code="Q30" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Additional Comments"/>
@@ -1057,7 +1057,7 @@
                             </text>
                             <entry>
                                 <!--SOP Instance reference-->
-                                <observation classCode="DGIMG" moodCode="EVN" ID="SOP1-2"/>
+                                <observation classCode="DGIMG" moodCode="EVN"/>
                             </entry>
                             <entry>
                                 <!--inline rendered image-->
@@ -1084,7 +1084,7 @@
                                 <linkHtml href="http://pubs.rsna.org/doi/abs/10.1148/radiol.2372041887"/>
                             </text>
                             <entry>
-                                <procedure ID="RadRec1" classCode="PROC" moodCode="PRP">
+                                <procedure classCode="PROC" moodCode="PRP">
                                     <!--local coding scheme -->
                                     <code code="9191919" codeSystem="2.16.840.1.56789.6.1" codeSystemName="My Hospital Coding System" displayName="3 month follow-up"/>
                                     <text>
