@@ -287,6 +287,24 @@
                         </procedure>
                     </entry>
                     <!-- 
+                    ********************************************************
+                      Image Quality Entry
+                    ********************************************************
+                    -->
+                    <entry>
+                        <observation classCode="OBS" moodCode="EVN" ID="Q1">
+                            <templateId root="1.2.840.10008.20.x3.x4"/>
+                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+                            <code code="111050" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Image Quality Assessment"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="20140730120000-0400"/>
+                            <value xsi:type="CD" code="RID12" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex" displayName="Diagnostic quality"/>
+                            <text>
+                                <reference value="#01b"/>
+                            </text>
+                        </observation>
+                    </entry>
+                    <!-- 
                     ***********************************************************
                       Radiation Exposure and Protection Information Sub Section
                     ***********************************************************
@@ -339,24 +357,6 @@
                             <code code="121181" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="DICOM Object Catalog"/>
                         </section>
                     </component>
-                    <!-- 
-                    ********************************************************
-                      Image Quality Entry
-                    ********************************************************
-                    -->
-                    <entry>
-                        <observation classCode="OBS" moodCode="EVN" ID="Q1">
-                            <templateId root="1.2.840.10008.20.x3.x4"/>
-                            <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-                            <code code="111050" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Image Quality Assessment"/>
-                            <statusCode code="completed"/>
-                            <effectiveTime value="20140730120000-0400"/>
-                            <value xsi:type="CD" code="RID12" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex" displayName="Diagnostic quality"/>
-                            <text>
-                                <reference value="#01b"/>
-                            </text>
-                        </observation>
-                    </entry>
                 </section>
             </component>
             <!-- 
