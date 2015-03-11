@@ -304,7 +304,7 @@
                                     <participant typeCode="RESP">
                                         <participantRole>
                                             <id root="2.16.840.1.113883.4.6" extension="980003719"/>
-                                            <functionCode code="113850" codeSystem="2.16.840.1.113883.6.1" codeSystemName="DCM" displayName="Irradiation Authorizing"/>
+                                            <code code="113850" codeSystem="2.16.840.1.113883.6.1" codeSystemName="DCM" displayName="Irradiation Authorizing"/>
                                             <playingEntity>
                                                 <name>
                                                     <given>Martha</given>
