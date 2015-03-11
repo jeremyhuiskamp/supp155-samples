@@ -278,7 +278,7 @@
                         <procedure moodCode="EVN" classCode="PROC">
                             <templateId root="1.2.840.10008.20.x3.x2"/>
                             <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-                            <procedureCode code="RPID629" displayName="MR Pelvis Rectum" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex"/>
+                            <code code="RPID629" displayName="MR Pelvis Rectum" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex"/>
                             <effectiveTime value="20140730120000-0400"/>
                             <methodCode code="MR" displayName="Magnetic Resonance" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
                             <reference value="#01a"/>
