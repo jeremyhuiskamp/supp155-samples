@@ -147,7 +147,7 @@
             <id root="1.2.840.113619.2.62.994044785528.26" extension="654321"/>
             <code code="RPID629" displayName="MR PELVIS RECTUM" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex">
                 <!-- translation code is Modality (0008,0060) -->
-                <translation code="MR" displayName="Magnetic Resonance" codeSystem="1.2.840.10008.5.1.4.1.1.4" codeSystemName="DCM"/>
+                <translation code="MR" displayName="Magnetic Resonance" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
             </code>
             <effectiveTime value="20140730120000-0400"/>
             <!-- In simple procedures, the physician reading the study is identified in the Author or LegalAuthenticator participation on the ClinicalDocument, and does not need to be re-identified in this element. 
