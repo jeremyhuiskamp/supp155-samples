@@ -306,47 +306,6 @@
                     </entry>
                     <!-- 
                     ***********************************************************
-                      Radiation Exposure and Protection Information Sub Section
-                    ***********************************************************
-                    -->
-                    <component>
-                        <section classCode="DOCSECT" moodCode="EVN">
-                            <templateId root="1.2.840.10008.20.x2.x7"/>
-                            <id root="1.2.840.10213.2.62.704478559484.11428372623"/>
-                            <code code="73569-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Radiation Exposure And Protection Information"/>
-                            <title> Radiation Exposure and Protection Information</title>
-                            <text>A dosage of...</text>
-                            <entry>
-                                <procedure classCode="PROC" moodCode="EVN">
-                                    <code code="99SUP155-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="DCM" displayName="Patient exposure to ionizing radiation"/>
-                                    <participant typeCode="RESP">
-                                        <participantRole>
-                                            <id root="2.16.840.1.113883.4.6" extension="980003719"/>
-                                            <code code="113850" codeSystem="2.16.840.1.113883.6.1" codeSystemName="DCM" displayName="Irradiation Authorizing"/>
-                                            <playingEntity>
-                                                <name>
-                                                    <given>Martha</given>
-                                                    <family>Radiologist</family>
-                                                </name>
-                                            </playingEntity>
-                                        </participantRole>
-                                    </participant>
-                                </procedure>
-                            </entry>
-                            <entry>
-                                <observation classCode="OBS" moodCode="EVN">
-                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-                                    <id root="1.2.840.10213.2.62.7044779.114265201"/>
-                                    <code code="364320009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pregnancy observable"/>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140914171504-0400"/>
-                                    <value xsi:type="CD" code="60001007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="not pregnant"/>
-                                </observation>
-                            </entry>
-                        </section>
-                    </component>
-                    <!-- 
-                    ***********************************************************
                       DICOM Object Catalog Sub Section
                     ***********************************************************
                     -->
