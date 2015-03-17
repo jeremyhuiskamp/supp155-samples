@@ -150,7 +150,9 @@
                 <translation code="MR" displayName="Magnetic Resonance" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
                 <translation code="12921003" displayName="Pelvis" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
             </code>
-            <effectiveTime value="20140730120000-0400"/>
+            <effectiveTime>
+                <low value="20140730120000-0400"/>
+            </effectiveTime>
         </serviceEvent>
     </documentationOf>
     <componentOf>
