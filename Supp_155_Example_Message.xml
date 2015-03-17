@@ -76,26 +76,6 @@
       Imaging Header Elements
     ********************************************************
     -->
-    <!-- DataEnterer is 0..1 MAY - e.g., person who transcribes from paper form to electronic system -->
-    <dataEnterer>
-        <assignedEntity>
-            <id root="2.16.840.1.113883.19.5" extension="99999"/>
-            <addr>
-                <streetAddressLine>501 Smyth Rd.</streetAddressLine>
-                <city>Ottawa</city>
-                <state>ON</state>
-                <postalCode>K1H 8L6</postalCode>
-                <country>CA</country>
-            </addr>
-            <telecom use="WP" value="tel:(613)555-1000"/>
-            <assignedPerson>
-                <name>
-                    <given>Data</given>
-                    <family>Enterer</family>
-                </name>
-            </assignedPerson>
-        </assignedEntity>
-    </dataEnterer>
     <custodian>
         <assignedCustodian>
             <representedCustodianOrganization>
@@ -171,16 +151,8 @@
                 <translation code="12921003" displayName="Pelvis" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
             </code>
             <effectiveTime value="20140730120000-0400"/>
-            <!-- In simple procedures, the physician reading the study is identified in the Author or LegalAuthenticator participation on the ClinicalDocument, and does not need to be re-identified in this element. 
-            <performer typeCode="PRF">
-            </performer>
-            -->
         </serviceEvent>
     </documentationOf>
-    <!-- we will assume this is the first instance of this report.
-    <relatedDocument typeCode="RPLC">
-    </relatedDocument>    
-    -->
     <componentOf>
         <encompassingEncounter>
             <id root="1.3.6.4.1.4.1.2835.12" extension="1234567890"/>
@@ -733,34 +705,6 @@
                                     <value xsi:type="CD" code="Q16a" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
                                 </observation>
                             </entry>
-                            <!-- Content that is dependent on the parent answer is included below but commented out. Inclusion will depend on the specific clinical content implementation guide.
-                            <entry>
-                                <observation classCode="OBS" moodCode="EVN">
-                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-                                    <code code="Q17" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance"/>
-                                    <text>
-                                        <reference value="#id17"/>
-                                    </text>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" nullFlavor="NA"/>
-                                </observation>
-                            </entry>
-                            <entry>
-                                <observation classCode="OBS" moodCode="EVN">
-                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-                                    <code code="Q18" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location"/>
-                                    <text>
-                                        <reference value="#id18"/>
-                                    </text>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" nullFlavor="NA"/>
-                                </observation>
-                            </entry>
-                            -->
                             <entry>
                                 <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
@@ -774,34 +718,6 @@
                                     <value xsi:type="CD" code="Q19b" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="No"/>
                                 </observation>
                             </entry>
-                            <!--
-                            <entry>
-                                <observation classCode="OBS" moodCode="EVN">
-                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-                                    <code code="Q20" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Distance"/>
-                                    <text>
-                                        <reference value="#id20"/>
-                                    </text>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="PQ" nullFlavor="NA"/>
-                                </observation>
-                            </entry>
-                            <entry>
-                                <observation classCode="OBS" moodCode="EVN">
-                                    <templateId root="2.16.840.1.113883.10.20.6.2.13"/>
-                                    <id root="f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
-                                    <code code="Q21" codeSystem="2.16.840.1.113883.3.239.23.12.x" codeSystemName="CCO MRI Rectal Tumour Checklist" displayName="Location"/>
-                                    <text>
-                                        <reference value="#id21"/>
-                                    </text>
-                                    <statusCode code="completed"/>
-                                    <effectiveTime value="20140730120000-0400"/>
-                                    <value xsi:type="CD" nullFlavor="NA"/>
-                                </observation>
-                            </entry>
-                            -->
                         </section>
                     </component>
                     <component>
