@@ -112,10 +112,30 @@
             </representedCustodianOrganization>
         </assignedCustodian>
     </custodian>
-    <!-- We will assume this document has NOT been legally authenticated.
     <legalAuthenticator>
+        <time value="20140730120000-0400"/>
+        <assignedEntity>
+            <id root="2.16.840.1.113883.4.347" extension="12345"/>
+            <!-- Fictitious  CPSO# and OID for CPSO (Ontario College of Physicians and Surgeons) -->
+            <id root="2.16.840.1.113883.19.5" extension="TOH1234"/>
+            <!-- Ottawa Hospital Physician ID -->
+            <addr>
+                <streetAddressLine>333 Laurier Avenue West</streetAddressLine>
+                <city>Ottawa</city>
+                <state>ON</state>
+                <postalCode>K1A 0L9</postalCode>
+                <country>CA</country>
+            </addr>
+            <telecom use="WP" value="tel:(613)555-1234"/>
+            <assignedPerson>
+                <name>
+                    <given>Slim</given>
+                    <family>Pickens</family>
+                    <suffix>MD</suffix>
+                </name>
+            </assignedPerson>
+        </assignedEntity>
     </legalAuthenticator>
-    -->
     <!-- participant is 1..1 SHALL - in this case a referring physician -->
     <participant typeCode="REF">
         <associatedEntity classCode="PROV">
