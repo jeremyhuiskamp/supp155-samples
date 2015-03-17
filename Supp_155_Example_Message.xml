@@ -983,7 +983,7 @@
                     <code code="19005-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Impressions"/>
                     <title>Impression</title>
                     <text>
-                        <content ID="id30">Additional Comments: Obstructing tumour</content>
+                        <content ID="id30">Circumferential tumour stage T4 rectal mass approximately 3 cm from the anal verge over a length of approximately 5cm. There are suspicious mesorectal lymph nodes and/or tumour deposits.</content>
                     </text>
                     <entry>
                         <observation classCode="OBS" moodCode="EVN">
