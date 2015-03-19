@@ -200,8 +200,8 @@
                             <id root="1.2.840.10213.2.62.7906994785528.114289506"/>
                             <code code="55115-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Request"/>
                             <title>Request</title>
-                            <text>PTA (Iliac Angioplasty) for treatment of symptomatic artherosclerotic disease in both iliac arteries.
-                                    <content ID="CDS001">Procedure ordered by Pat Smith, MD, NPI:8740944987. Classified APPROPRIATE by RadCDS based on ACR Select criteria at 2015-07-21 10:52:31 CDT</content>
+                            <text>For staging of Rectal Cancer.
+                                    <content ID="CDS001">Procedure ordered by Ty Cobb, MD. Classified APPROPRIATE by RadCDS based on ACR Select criteria at 2015-07-21 10:52:31 CDT</content>
                                 </text>
                             <entry>
                                 <observation classCode="OBS" moodCode="EVN">
