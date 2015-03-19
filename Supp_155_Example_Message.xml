@@ -645,36 +645,19 @@
                                     <item>
                                         <content ID="id13a">Minimum Distance of Primary Tumour to the Mesorectal Fascia: 0 mm</content>
                                     </item>
-                                    <!-- Comment out the content NOT relevant this report instance
+                                    <!-- Second answer provided below to demonstrate how nullFlavor code is utilized. See corresponding entry below. -->
                                     <item>
                                         <content ID="id13b">Minimum Distance of Primary Tumour to the Mesorectal Fascia: N/A</content>
                                     </item>
-                                    -->
                                     <item>
                                         <content ID="id15">Extramural Depth of Invasion (EMD) at this level: 10 mm</content>
                                     </item>
                                     <item>
                                         <content ID="id16">There are no tumour spiculations closer to the MRF.</content>
                                     </item>
-                                    <!--
-                                    <item>
-                                        <content ID="id17">Distance: N/A</content>
-                                    </item>
-                                    <item>
-                                        <content ID="id18">Location: N/A</content>
-                                    </item>
-                                    -->
                                     <item>
                                         <content ID="id19">There are no other components of the tumour (any T2-3) closer to the MRF.</content>
                                     </item>
-                                    <!--
-                                    <item>
-                                        <content ID="id20">Distance: N/A</content>
-                                    </item>
-                                    <item>
-                                        <content ID="id21">Location: N/A</content>
-                                    </item>
-                                    -->
                                 </list>
                             </text>
                             <!-- 
