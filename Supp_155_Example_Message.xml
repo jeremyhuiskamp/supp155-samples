@@ -188,7 +188,7 @@
                     <id root="1.2.840.10213.2.62.994044785528.114289542805"/>
                     <code code="55752-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Clinical Information"/>
                     <title>Clinical Information</title>
-                    <text>The patient was referred for evaluation of...</text>
+                    <text>The patient was referred for rectal cancer staging following preoperative chemoradiation for Stage III primary rectal cancer.</text>
                     <!--
                     ********************************************************
                       Request Sub Section
