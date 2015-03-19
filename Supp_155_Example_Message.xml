@@ -940,7 +940,7 @@
                             <code code="73568-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Communication of Critical Results"/>
                             <title>Communication of Actionable Results</title>
                             <text>
-                                <content ID="CR1">Dr. Smith was phoned at 262-966-0120 at 3:14pm on Wednesday, June 4, 2014, and the T4 classification was discussed directly with Dr. Smith to explain the follow-up recommendation of...</content>
+                                <content ID="CR1">Dr. Cobb was phoned at 613-555-1234 at 3:14pm on Wednesday, June 4, 2015, and the T4 classification was discussed directly with Dr. Cobb to explain the follow-up recommendation of...</content>
                                 <!--T4 staging classification from <reference value="#id09"/> above in Findings -->
                             </text>
                             <entry>
