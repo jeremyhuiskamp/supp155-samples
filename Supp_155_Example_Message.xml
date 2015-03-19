@@ -41,10 +41,18 @@
                 <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" displayName="Male"/>
                 <birthTime value="19601231"/>
             </patient>
-            <!-- providerOrganization is the healthcare organization that assigned the id sub-element of patientRole. 0..1 MAY.
             <providerOrganization>
+               <id root="2.16.840.1.113883.19"/>
+                <name>The Ottawa Hospital</name>
+                <telecom value="tel:(613)798-5555" use="WP"/>
+                <addr use="WP">
+                    <streetAddressLine>501 Smyth Rd.</streetAddressLine>
+                    <city>Ottawa</city>
+                    <state>ON</state>
+                    <postalCode>K1H 8L6</postalCode>
+                    <country>CA</country>
+                </addr>
             </providerOrganization>
-            -->
         </patientRole>
     </recordTarget>
     <author>
