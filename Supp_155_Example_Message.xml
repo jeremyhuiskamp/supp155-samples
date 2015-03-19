@@ -102,6 +102,7 @@
     </custodian>
     <legalAuthenticator>
         <time value="20140730120000-0400"/>
+        <signatureCode code="S"/>
         <assignedEntity>
             <id root="2.16.840.1.113883.4.347" extension="12345"/>
             <!-- Fictitious  CPSO# and OID for CPSO (Ontario College of Physicians and Surgeons) -->
