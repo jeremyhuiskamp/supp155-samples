@@ -26,8 +26,8 @@
     <versionNumber value="1"/>
     <recordTarget>
         <patientRole>
-            <id root="2.16.840.1.113883.19" extension="12345"/>
-            <!-- Fake ID using HL7 example OID -->
+            <!-- Example ID using fake OID -->
+            <id root="2.16.840.1.113743.19" extension="12345"/>
             <addr>
                 <streetAddressLine>123 Main St.</streetAddressLine>
                 <city>Ottawa</city>
