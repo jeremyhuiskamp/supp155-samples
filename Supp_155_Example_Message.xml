@@ -156,8 +156,7 @@
         <serviceEvent classCode="ACT">
             <!-- study instance UID -->
             <id root="1.2.840.113619.2.62.994044785528.114289542805"/>
-            <!-- DICOM Requested Procedure ID -->
-            <id root="1.2.840.113619.2.62.994044785528.26" extension="654321"/>
+            <!-- DICOM (Performed) Procedure Code -->
             <code code="RPID629" displayName="MR PELVIS RECTUM" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex">
                 <!-- translation code is Modality (0008,0060) -->
                 <translation code="MR" displayName="Magnetic Resonance" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
