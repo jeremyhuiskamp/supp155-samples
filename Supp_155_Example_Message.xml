@@ -28,7 +28,7 @@
         <patientRole>
             <id root="2.16.840.1.113883.19" extension="12345"/>
             <!-- Fake ID using HL7 example OID -->
-            <addr use="HP">
+            <addr>
                 <streetAddressLine>123 Main St.</streetAddressLine>
                 <city>Ottawa</city>
                 <state>ON</state>
@@ -37,7 +37,7 @@
             </addr>
             <telecom value="tel:(613)867-5309" use="HP"/>
             <patient>
-                <name use="L">
+                <name>
                     <given>Bobo</given>
                     <family>Clown</family>
                     <suffix>the 1st</suffix>
@@ -49,7 +49,7 @@
                <id root="2.16.840.1.113883.19"/>
                 <name>The Ottawa Hospital</name>
                 <telecom value="tel:(613)798-5555" use="WP"/>
-                <addr use="WP">
+                <addr>
                     <streetAddressLine>501 Smyth Rd.</streetAddressLine>
                     <city>Ottawa</city>
                     <state>ON</state>
@@ -94,7 +94,7 @@
                 <id root="2.16.840.1.113883.19.5"/>
                 <name>The Ottawa Hospital</name>
                 <telecom value="tel:(613)798-5555" use="WP"/>
-                <addr use="WP">
+                <addr>
                     <streetAddressLine>501 Smyth Rd.</streetAddressLine>
                     <city>Ottawa</city>
                     <state>ON</state>
