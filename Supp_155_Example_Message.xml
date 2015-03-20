@@ -149,7 +149,7 @@
             <!--  extension = Placer Order Number/Imaging Service Request (0040,2016) root = Order Placer Identifier Sequence (0040,0026) and Universal Entity ID (0040,0032) or from HL7 order message -->
             <id root="2.16.840.1.113883.19.4.33" extension="089-927851"/>
             <!--  {extension}= Accession Number (0008,0050) {root}= Issuer of Accession Number Sequence (0008,0051) > Universal Entity ID  (0040,0032) -->
-            <id root="2.16.840.1.113883.19.4.27" extension="10523475"/>
+            <ps3-20:accessionNumber extension="10523475"  root="2.16.840.1.113883.19.4.27"/>
             <!-- The Requested Procedure Code would go here if it were present(0032, 1064) or from HL7 order -->
         </order>
     </inFulfillmentOf>
