@@ -83,11 +83,6 @@
             </assignedPerson>
         </assignedAuthor>
     </author>
-    <!-- 
-    ********************************************************
-      Imaging Header Elements
-    ********************************************************
-    -->
     <custodian>
         <assignedCustodian>
             <representedCustodianOrganization>
@@ -144,6 +139,11 @@
             </associatedPerson>
         </associatedEntity>
     </participant>
+    <!-- 
+    ********************************************************
+      Imaging Header Elements
+    ********************************************************
+    -->
     <inFulfillmentOf>
         <order>
             <!--  {root}.33= placer number assigner (CPOE) -->
