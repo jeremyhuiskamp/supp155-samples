@@ -356,7 +356,26 @@
                     <id root="1.2.840.10213.2.62.994056444785528.1142893564536542805"/>
                     <code code="18834-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Radiology Comparison Study"/>
                     <title>Comparison Study</title>
-                    <text>A prior MRI performed on ***DATE*** showed that...</text>
+                    <text>
+                    <content ID="id01c">A prior MRI Pelvis Rectum performed on Jan 1, 2014 showed that the patient has Stage III primary rectal cancer.</content>
+                    </text>
+                    <!-- 
+                    ***********************************************************
+                      Procedure Technique Entry
+                    ***********************************************************
+                    -->
+                    <entry>
+                        <procedure moodCode="EVN" classCode="PROC">
+                            <templateId root="1.2.840.10008.20.x3.x2"/>
+                            <id root="29a9be6a-ec21-447b-af5c-4f4e5196b08f"/>
+                            <code code="RPID629" displayName="MR Pelvis Rectum" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex"/>
+                            <text>
+                                <reference value="#id01c"/>
+                            </text>
+                            <effectiveTime value="20140101120000-0400"/>
+                            <methodCode code="MR" displayName="Magnetic Resonance" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
+                        </procedure>
+                    </entry>
                 </section>
             </component>
             <!--
