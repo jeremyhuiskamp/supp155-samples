@@ -146,17 +146,18 @@
     -->
     <inFulfillmentOf>
         <order>
-            <!--  {root}.33= placer number assigner (CPOE) -->
+            <!--  extension = Placer Order Number/Imaging Service Request (0040,2016) root = Order Placer Identifier Sequence (0040,0026) and Universal Entity ID (0040,0032) or from HL7 order message -->
             <id root="2.16.840.1.113883.19.4.33" extension="089-927851"/>
-            <!--  {root}.27= accession number assigner (RIS) -->
+            <!--  {extension}= Accession Number (0008,0050) {root}= Issuer of Accession Number Sequence (0008,0051) > Universal Entity ID  (0040,0032) -->
             <id root="2.16.840.1.113883.19.4.27" extension="10523475"/>
+            <!-- The Requested Procedure Code would go here if it were present(0032, 1064) or from HL7 order -->
         </order>
     </inFulfillmentOf>
     <documentationOf>
         <serviceEvent classCode="ACT">
             <!-- study instance UID -->
             <id root="1.2.840.113619.2.62.994044785528.114289542805"/>
-            <!-- DICOM (Performed) Procedure Code -->
+            <!-- DICOM (Performed) Procedure Code (0008,1032) -->
             <code code="RPID629" displayName="MR PELVIS RECTUM" codeSystem="2.16.840.1.113883.6.256" codeSystemName="RadLex">
                 <!-- translation code is Modality (0008,0060) -->
                 <translation code="MR" displayName="Magnetic Resonance" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
