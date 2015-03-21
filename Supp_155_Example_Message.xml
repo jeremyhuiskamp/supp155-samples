@@ -336,7 +336,13 @@
                                             <!-- **** SOP Instance UID *** -->
                                             <!--  2 References  -->
                                             <entryRelationship typeCode="COMP">
-                                                <observation classCode="DGIMG" moodCode="EVN"><templateId root="2.16.840.1.113883.10.20.6.2.8"/> ... </observation>
+                                                <observation classCode="DGIMG" moodCode="EVN">
+                                                    <templateId root="2.16.840.1.113883.10.20.x3.x7"/> 
+                                                    <id root="1.2.840.113619.2.62.994044785528.20060823.200608232232322.3"/>
+                                                    <!--  MR Enhanced Storage SOP Class -->
+                                                    <code code="1.2.840.10008.5.1.4.1.1.4.1" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="MR Enhanced"/>
+                                                    </code>
+                                                </observation>
                                             </entryRelationship>
                                             <entryRelationship typeCode="COMP">
                                                 <observation classCode="DGIMG" moodCode="EVN"><templateId root="2.16.840.1.113883.10.20.6.2.8"/> ... </observation>
